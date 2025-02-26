@@ -23,7 +23,7 @@ const testimonials: Testimonial[] = [
     text: "TradesCraft Web transformed our online presence. Since launching our new website, we've seen a 40% increase in leads and our conversion rate has doubled. The team understood exactly what our plumbing business needed.",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
     deliveryTime: 48,
-    features: ["AI Chat", "Review Aggregation", "Auto Updates"]
+    features: ["AI Chat", "Review Aggregation", "Auto Updates", "Social Media Sync"]
   },
   {
     id: 2,
@@ -32,7 +32,9 @@ const testimonials: Testimonial[] = [
     trade: "Electrician",
     rating: 5,
     text: "As an electrician, I needed a website that could generate leads while I'm out on jobs. TradesCraft delivered exactly that. Their SEO work has put me at the top of local search results, and the mobile-friendly design means customers can contact me easily.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+    deliveryTime: 60,
+    features: ["AI Chat", "Social Media Sync", "Auto SEO"]
   },
   {
     id: 3,
@@ -41,7 +43,9 @@ const testimonials: Testimonial[] = [
     trade: "Builder",
     rating: 4,
     text: "The team at TradesCraft Web understood our construction business needs perfectly. They built us a website that showcases our projects beautifully and brings in quality leads. The investment has paid for itself many times over.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+    deliveryTime: 72,
+    features: ["Project Gallery", "Lead Capture", "Review Aggregation"]
   },
   {
     id: 4,
@@ -50,7 +54,9 @@ const testimonials: Testimonial[] = [
     trade: "Painter",
     rating: 5,
     text: "Our painting business has grown exponentially since TradesCraft Web redesigned our website. The before and after project gallery they created has been instrumental in showing potential clients the quality of our work.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+    deliveryTime: 48,
+    features: ["Portfolio Showcase", "Social Media Sync", "AI Chat"]
   }
 ];
 
@@ -93,7 +99,7 @@ const TestimonialCarousel = () => {
     <div className="relative bg-white rounded-lg shadow-lg p-6 md:p-8">
       <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
         <div className="w-full md:w-1/3 flex justify-center">
-          <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-blue-500">
+          <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-[#fd8f01]">
             <img 
               src={testimonials[currentIndex].image} 
               alt={testimonials[currentIndex].name}
@@ -104,7 +110,7 @@ const TestimonialCarousel = () => {
         
         <div className="w-full md:w-2/3">
           <div className="mb-4">
-            <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+            <span className="bg-[#fff5e6] text-[#fd8f01] text-sm font-medium px-3 py-1 rounded-full">
               Delivered in {testimonials[currentIndex].deliveryTime} hours
             </span>
           </div>
@@ -149,7 +155,7 @@ const TestimonialCarousel = () => {
             key={index}
             onClick={() => handleDotClick(index)}
             className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
+              index === currentIndex ? 'bg-[#fd8f01]' : 'bg-gray-300'
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
           />
@@ -158,7 +164,7 @@ const TestimonialCarousel = () => {
       
       <button
         onClick={handlePrev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-blue-600 p-2 rounded-full shadow-md"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#fd8f01] p-2 rounded-full shadow-md"
         aria-label="Previous testimonial"
       >
         <ChevronLeft size={24} />
@@ -166,7 +172,7 @@ const TestimonialCarousel = () => {
       
       <button
         onClick={handleNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-blue-600 p-2 rounded-full shadow-md"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#fd8f01] p-2 rounded-full shadow-md"
         aria-label="Next testimonial"
       >
         <ChevronRight size={24} />

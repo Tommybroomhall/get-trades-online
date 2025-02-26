@@ -7,9 +7,11 @@ import {
   Zap, 
   Globe, 
   Code, 
-  ShoppingCart, 
-  BarChart, 
-  MessageSquare 
+  Clock, 
+  Hammer,
+  MessageSquare, 
+  BarChart,
+  ShoppingCart
 } from 'lucide-react';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 import ServiceCard from '../components/ServiceCard';
@@ -23,7 +25,7 @@ const HomePage = () => {
       <section 
         className="relative bg-slate-900 text-white py-20 md:py-32"
         style={{
-          backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url(https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80)',
+          backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url(https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -31,25 +33,27 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              AI-Powered Trade Websites <span className="text-blue-400">in 72 Hours</span>
+              Websites For Builders <span className="text-[#fd8f01]">In 48 Hours</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              100% automated websites with review aggregation, AI chat, and social sync - 
-              focus on your trade while we handle your online presence
+              Get online while you're on the tools. One payment, then we handle everything.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
                 to="/contact" 
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300"
+                className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
               >
-                Get a Quote
+                Get Started
               </Link>
-              <Link 
-                to="/portfolio" 
-                className="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold py-3 px-8 rounded-md transition duration-300"
+              <a 
+                href="https://wa.me/+441234567890" 
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
               >
-                View Our Work
-              </Link>
+                <MessageSquare size={20} />
+                <span>WhatsApp Us</span>
+              </a>
             </div>
           </div>
         </div>
@@ -59,62 +63,70 @@ const HomePage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Why Choose Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Built By Tradesmen, For Tradesmen</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We build websites that work as hard as you do. Our solutions are designed specifically for tradesmen who want to grow their business.
+              Our founder was a builder for 15 years. We understand you need a website that works as hard as you do, with no tech headaches.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-block p-3 bg-blue-100 rounded-full text-blue-600 mb-4">
-                <Palette size={32} />
+              <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
+                <Clock size={32} />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Expert Design</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">48-72 Hour Delivery</h3>
               <p className="text-gray-600">
-                Beautiful, professional designs that reflect your trade and attract your ideal customers.
+                Your complete website up and running within 3 days - no waiting for weeks.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-block p-3 bg-blue-100 rounded-full text-blue-600 mb-4">
+              <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
                 <Search size={32} />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">SEO Optimized</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Local SEO Built-In</h3>
               <p className="text-gray-600">
-                Rank higher in local searches so customers can find you when they need your services.
+                Show up when local customers search for your trade - we optimize it all for you.
               </p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-block p-3 bg-blue-100 rounded-full text-blue-600 mb-4">
-                <Smartphone size={32} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Mobile-Friendly</h3>
-              <p className="text-gray-600">
-                Responsive websites that look great and function perfectly on any device.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-block p-3 bg-blue-100 rounded-full text-blue-600 mb-4">
+              <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
                 <Zap size={32} />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">AI-Powered Automation</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Automatic Reviews</h3>
               <p className="text-gray-600">
-                Automatic review imports from Google, Facebook, and trade platforms + 
-                social media integration
+                We pull in your Google, Facebook and CheckaTrade reviews automatically.
               </p>
             </div>
-
+            
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="inline-block p-3 bg-blue-100 rounded-full text-blue-600 mb-4">
+              <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
+                <Smartphone size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Perfect on Mobile</h3>
+              <p className="text-gray-600">
+                Looks great on phones, tablets and computers - where most of your customers will find you.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
+                <Hammer size={32} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Builder to Builder</h3>
+              <p className="text-gray-600">
+                Founded by an ex-builder who understands what your business really needs.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
                 <Globe size={32} />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Smart Maintenance</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Simple Pricing</h3>
               <p className="text-gray-600">
-                Hands-free updates with our trade-specific foundation - 
-                we handle security, SEO, and content updates
+                One clear price, no hidden costs, no ongoing maintenance headaches.
               </p>
             </div>
           </div>
@@ -192,7 +204,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link 
               to="/services" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300"
+              className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
             >
               View All Services
             </Link>
@@ -239,7 +251,7 @@ const HomePage = () => {
           <div className="text-center mt-12">
             <Link 
               to="/portfolio" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300"
+              className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
             >
               View Full Portfolio
             </Link>
@@ -264,7 +276,7 @@ const HomePage = () => {
             </p>
             <Link 
               to="/contact" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300"
+              className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
             >
               Get Started
             </Link>
