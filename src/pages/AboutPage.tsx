@@ -21,7 +21,7 @@ const AboutPage = () => {
               Founded by a carpenter, built for tradespeople who are tired of being ripped off for websites.
             </p>
             <a 
-              href="https://wa.me/+441234567890" 
+              href="https://wa.me/+447424163547" 
               target="_blank"
               rel="noopener noreferrer" 
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 inline-flex items-center"
@@ -307,7 +307,7 @@ const AboutPage = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://wa.me/+441234567890" 
+              href="https://wa.me/+447424163547" 
               target="_blank"
               rel="noopener noreferrer" 
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center"

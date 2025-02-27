@@ -222,7 +222,7 @@ const ContactForm = ({ detailed = false }) => {
         <div className="mt-6 pt-6 border-t border-gray-200">
           <p className="text-gray-700 font-medium mb-3">Prefer a faster response?</p>
           <a 
-            href="https://wa.me/+441234567890" 
+            href="https://wa.me/+447424163547" 
             target="_blank"
             rel="noopener noreferrer" 
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center justify-center md:justify-start md:inline-flex"

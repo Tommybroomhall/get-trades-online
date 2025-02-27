@@ -47,7 +47,7 @@ const HomePage = () => {
                 Get Started
               </Link>
               <a 
-                href="https://wa.me/+441234567890" 
+                href="https://wa.me/+447424163547" 
                 target="_blank"
                 rel="noopener noreferrer" 
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
@@ -356,7 +356,7 @@ const HomePage = () => {
             </div>
             <div className="flex justify-center mt-5">
               <a 
-                href="https://wa.me/+441234567890" 
+                href="https://wa.me/+447424163547" 
                 target="_blank"
                 rel="noopener noreferrer" 
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-md transition duration-300 flex items-center space-x-2"
@@ -408,7 +408,7 @@ const HomePage = () => {
                   Learn More
                 </Link>
                 <a 
-                  href="https://wa.me/+441234567890" 
+                  href="https://wa.me/+447424163547" 
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
@@ -640,7 +640,7 @@ const HomePage = () => {
                   
                   <div className="flex flex-wrap gap-4">
                     <a 
-                      href="https://wa.me/+441234567890" 
+                      href="https://wa.me/+447424163547" 
                       target="_blank"
                       rel="noopener noreferrer" 
                       className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center"

@@ -48,7 +48,7 @@ const ContactPage = () => {
                 </ul>
               </div>
               <a 
-                href="https://wa.me/+441234567890" 
+                href="https://wa.me/+447424163547" 
                 target="_blank"
                 rel="noopener noreferrer" 
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center justify-center w-full"
@@ -143,7 +143,7 @@ const ContactPage = () => {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a 
-                    href="https://wa.me/+441234567890" 
+                    href="https://wa.me/+447424163547" 
                     target="_blank"
                     rel="noopener noreferrer" 
                     className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 flex items-center"

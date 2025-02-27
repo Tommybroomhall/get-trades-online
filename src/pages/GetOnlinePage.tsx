@@ -16,7 +16,7 @@ const GetOnlinePage = () => {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://wa.me/+441234567890" target="_blank" rel="noopener noreferrer" 
+              <a href="https://wa.me/+447424163547" target="_blank" rel="noopener noreferrer" 
                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center space-x-2">
                 <WhatsAppIcon size={20} />
                 <span>Quick Chat</span>
@@ -472,7 +472,7 @@ const GetOnlinePage = () => {
             </div>
             <div className="flex justify-center mt-5">
               <a 
-                href="https://wa.me/+441234567890" 
+                href="https://wa.me/+447424163547" 
                 target="_blank"
                 rel="noopener noreferrer" 
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-md transition duration-300 flex items-center space-x-2"
@@ -707,7 +707,7 @@ const GetOnlinePage = () => {
           <div className="mt-8 text-center">
             <p className="text-gray-600 mb-4">These are real conversations with our clients. See how we can transform your business too.</p>
             <a 
-              href="https://wa.me/+441234567890" 
+              href="https://wa.me/+447424163547" 
               target="_blank"
               rel="noopener noreferrer" 
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 inline-flex items-center space-x-2"
@@ -768,7 +768,7 @@ const GetOnlinePage = () => {
               
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="https://wa.me/+441234567890" 
+                  href="https://wa.me/+447424163547" 
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
@@ -813,7 +813,7 @@ const GetOnlinePage = () => {
           
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://wa.me/+441234567890" 
+              href="https://wa.me/+447424163547" 
               target="_blank"
               rel="noopener noreferrer" 
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
@@ -833,7 +833,7 @@ const GetOnlinePage = () => {
 
       <div className="fixed bottom-0 left-0 right-0 bg-white p-3 shadow-lg z-50 md:hidden">
         <div className="flex justify-between gap-2">
-          <a href="https://wa.me/+441234567890" target="_blank" rel="noopener noreferrer" 
+          <a href="https://wa.me/+447424163547" target="_blank" rel="noopener noreferrer" 
              className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center flex-1">
             <WhatsAppIcon size={18} className="mr-1" />
             <span>Chat</span>
