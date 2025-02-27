@@ -9,14 +9,15 @@ import {
   Code, 
   Clock, 
   Hammer,
-  MessageSquare, 
+  MessageSquare,
   BarChart,
-  ShoppingCart
+  ShoppingCart,
+  Check
 } from 'lucide-react';
-import TestimonialCarousel from '../components/TestimonialCarousel';
 import ServiceCard from '../components/ServiceCard';
 import PortfolioCard from '../components/PortfolioCard';
 import ContactForm from '../components/ContactForm';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const HomePage = () => {
   return (
@@ -40,7 +41,7 @@ const HomePage = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
-                to="/contact" 
+                to="/get-started" 
                 className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
               >
                 Get Started
@@ -51,9 +52,62 @@ const HomePage = () => {
                 rel="noopener noreferrer" 
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
               >
-                <MessageSquare size={20} />
+                <WhatsAppIcon size={20} />
                 <span>WhatsApp Us</span>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Objection Handling Section */}
+      <section className="py-12 bg-[#fff5e6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 flex items-center">
+                <span className="bg-[#fd8f01] text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-3">?</span>
+                "Why do I need a website when I get most of my work through word of mouth?"
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <p className="text-lg text-gray-700 mb-6">
+                  Whilst word-of-mouth recommendations are valuable, a professional website acts as a 24/7 portfolio and booking system. 
+                  <strong className="text-slate-800"> When satisfied customers recommend you, the first thing potential clients do is search for you online.</strong>
+                </p>
+                
+                <p className="text-lg text-gray-700">
+                  Without a website, you might miss out on these pre-qualified leads who already trust you through recommendation.
+                </p>
+              </div>
+              
+              <div className="bg-gray-50 p-5 rounded-lg">
+                <h3 className="font-bold text-slate-800 mb-4">A builder's website helps you:</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span>Show off the work you're most proud of - the jobs where you stepped back and thought "I built that"</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span>Let your happy customers sell for you with reviews that build trust before you even meet</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span>Get enquiries while you're on the tools - no more missing calls or interruptions on site</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span>Look more professional than that guy down the road with just a Facebook page or homemade site</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span>Break free from relying on the same customers - bring in new jobs from people who've never heard of you</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -133,17 +187,65 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Get Online Feature Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">What Our Clients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what tradesmen like you have to say about working with us.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="bg-[#fff5e6] p-2 inline-block rounded-lg text-[#fd8f01] mb-4">
+                <Hammer size={24} />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Get Your Trade Business Online in 48 Hours</h2>
+              <p className="text-xl text-gray-600 mb-6">
+                Stop losing jobs to competitors who show up online. Our complete website package is designed specifically for builders and tradespeople - with one simple payment.
+              </p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span>Custom website ready in just 48 hours</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span>Mobile-friendly design that works on all devices</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span>Built to attract local customers searching for your services</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span>WhatsApp integration for easy customer contact</span>
+                </li>
+              </ul>
+              
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  to="/get-online" 
+                  className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
+                >
+                  Learn More
+                </Link>
+                <a 
+                  href="https://wa.me/+441234567890" 
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
+                >
+                  <WhatsAppIcon size={20} />
+                  <span>WhatsApp Us</span>
+                </a>
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <img 
+                src="https://images.unsplash.com/photo-1516216628859-9bccecab13ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                alt="Builder with laptop looking at website" 
+                className="w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
           </div>
-          
-          <TestimonialCarousel />
         </div>
       </section>
 
@@ -194,7 +296,7 @@ const HomePage = () => {
             />
             
             <ServiceCard 
-              icon={<MessageSquare size={32} />}
+              icon={<WhatsAppIcon size={32} />}
               title="Content Creation"
               description="Professional content writing services to showcase your expertise and improve your SEO. We create engaging content that resonates with your target audience."
               link="/services#content-creation"
@@ -331,6 +433,58 @@ const HomePage = () => {
             
             <div>
               <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Add this new section at the bottom of the HomePage before the closing </div> */}
+      <section className="py-16 bg-[#fff5e6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="bg-green-100 p-4 rounded-full">
+                  <WhatsAppIcon className="text-green-600" size={40} />
+                </div>
+                
+                <div className="flex-1">
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Got an idea for your website?</h2>
+                  <p className="text-lg text-gray-700 mb-4">
+                    Just chat to your account manager. Send photos, explain what you want, and we'll give you a straightforward quote.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-6">
+                    <strong>No tech talk. No complicated forms.</strong> Just tell us what would make your life easier, and we'll sort it.
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-4">
+                    <a 
+                      href="https://wa.me/+441234567890" 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center"
+                    >
+                      <WhatsAppIcon size={20} className="mr-2" />
+                      <span>Chat About Your Ideas</span>
+                    </a>
+                    <Link 
+                      to="/get-started" 
+                      className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-6 rounded-md transition duration-300"
+                    >
+                      Start Your Website
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="border-t border-gray-200 bg-gray-50 px-6 py-4">
+              <div className="flex items-start">
+                <Hammer className="text-[#fd8f01] mr-3 flex-shrink-0 mt-1" size={20} />
+                <p className="text-gray-700">
+                  <span className="font-semibold">Builder to Builder:</span> We know what it's like on site. You have ideas and no time for complicated tech stuff. That's why we keep it simple.
+                </p>
+              </div>
             </div>
           </div>
         </div>

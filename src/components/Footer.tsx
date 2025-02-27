@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MessageSquare, MapPin } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const Footer = () => {
   return (
@@ -83,7 +84,7 @@ const Footer = () => {
                 rel="noopener noreferrer" 
                 className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md w-max transition duration-200"
               >
-                <MessageSquare size={20} />
+                <WhatsAppIcon size={20} />
                 <span>WhatsApp Us</span>
               </a>
               <Link 

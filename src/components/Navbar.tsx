@@ -1,13 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, MessageSquare } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import logoImage from './images/timmeman (560 x 130 px).png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const timerRef = useRef(null);
+
+  // Setup auto-close timer when menu opens
+  useEffect(() => {
+    if (isOpen) {
+      // Clear any existing timer
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      
+      // Set new timer to close menu after 4 seconds
+      timerRef.current = setTimeout(() => {
+        setIsOpen(false);
+      }, 4000);
+    }
+
+    // Cleanup timer when component unmounts or menu closes
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  // Function to close menu when a navigation item is clicked
+  const closeMenu = () => {
+    setIsOpen(false);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
   };
 
   return (
@@ -27,6 +59,7 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link to="/" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Home</Link>
               <Link to="/about" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">About</Link>
+              <Link to="/get-online" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Get Online</Link>
               <Link to="/services" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Services</Link>
               <Link to="/portfolio" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Our Work</Link>
               <Link to="/contact" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
@@ -39,7 +72,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition duration-200"
             >
-              <MessageSquare size={18} />
+              <WhatsAppIcon size={18} />
               <span className="font-medium">WhatsApp Us</span>
             </a>
             <div className="flex items-center space-x-2 text-slate-800">
@@ -65,35 +98,42 @@ const Navbar = () => {
             <Link 
               to="/" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
-              onClick={toggleMenu}
+              onClick={closeMenu}
             >
               Home
             </Link>
             <Link 
               to="/about" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
-              onClick={toggleMenu}
+              onClick={closeMenu}
             >
               About
             </Link>
             <Link 
+              to="/get-online" 
+              className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
+              onClick={closeMenu}
+            >
+              Get Online
+            </Link>
+            <Link 
               to="/services" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
-              onClick={toggleMenu}
+              onClick={closeMenu}
             >
               Services
             </Link>
             <Link 
               to="/portfolio" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
-              onClick={toggleMenu}
+              onClick={closeMenu}
             >
               Our Work
             </Link>
             <Link 
               to="/contact" 
               className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
-              onClick={toggleMenu}
+              onClick={closeMenu}
             >
               Contact
             </Link>
@@ -103,8 +143,9 @@ const Navbar = () => {
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white mt-4 px-4 py-2 rounded-md"
+              onClick={closeMenu}
             >
-              <MessageSquare size={18} />
+              <WhatsAppIcon size={18} />
               <span>WhatsApp Us</span>
             </a>
           </div>
