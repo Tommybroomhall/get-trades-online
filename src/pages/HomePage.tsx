@@ -187,6 +187,187 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Choose Your Website Package</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Simple, transparent pricing. No hidden fees. No surprise bills.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* New Business Package */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105 flex flex-col">
+              <div className="bg-[#fd8f01] text-white p-4 text-center">
+                <h3 className="text-xl font-bold">New Business Package</h3>
+                <p className="text-sm mt-1">For startups and new trades</p>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="text-center mb-6">
+                  <span className="text-4xl font-bold">£500</span>
+                  <p className="text-gray-600 mt-1">One-time setup</p>
+                  <p className="text-sm font-medium mt-2">+ £150/year after first year</p>
+                  <div className="mt-3 bg-green-50 text-green-700 text-sm p-2 rounded">
+                    Save £4,000+ compared to monthly subscriptions
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Perfect for new businesses with no online presence</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Simple branding and content creation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Basic local SEO setup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Mobile-responsive design</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>WhatsApp integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>First year hosting included</span>
+                  </li>
+                </ul>
+                
+                <Link 
+                  to="/get-started" 
+                  className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-4 rounded-md transition duration-300 text-center w-full mt-auto"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+            
+            {/* Established Business Package */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105 flex flex-col">
+              <div className="bg-slate-800 text-white p-4 text-center">
+                <h3 className="text-xl font-bold">Established Business Package</h3>
+                <p className="text-sm mt-1">For existing trades with more content</p>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="text-center mb-6">
+                  <span className="text-4xl font-bold">£750</span>
+                  <p className="text-gray-600 mt-1">One-time setup</p>
+                  <p className="text-sm font-medium mt-2">+ £150/year after first year</p>
+                  <div className="mt-3 bg-green-50 text-green-700 text-sm p-2 rounded">
+                    Save £4,000+ compared to monthly subscriptions
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Ideal for established businesses with existing content</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Migration of existing content and reviews</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Advanced local SEO optimization</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Portfolio/gallery of past work</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Review integration from multiple platforms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>First year hosting included</span>
+                  </li>
+                </ul>
+                
+                <Link 
+                  to="/get-started" 
+                  className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 text-center w-full mt-auto"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          {/* Add a new comparison section */}
+          <div className="max-w-4xl mx-auto mt-16 bg-gray-50 rounded-lg p-8 shadow-md">
+            <h3 className="text-2xl font-bold text-slate-800 mb-6">Why Pay £165/Month When You Can Pay Once?</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-bold text-slate-800 mb-4">The "Big Agency" Way:</h4>
+                <div className="bg-white p-5 rounded-lg shadow-sm">
+                  <div className="text-red-500 font-bold text-lg mb-2">£165+VAT/month (first year)</div>
+                  <div className="text-red-500 font-bold text-lg mb-4">£65+VAT/month (after first year)</div>
+                  <p className="text-gray-700 mb-3">That's <span className="font-bold">£1,980 in year one</span> and <span className="font-bold">£780 every year after</span>.</p>
+                  <div className="text-2xl font-bold text-red-600 mt-4 mb-2">5-Year Cost: £5,100+VAT</div>
+                  <p className="text-sm text-gray-500">Source: builtfortrades.co.uk (Grow Website package)</p>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-bold text-slate-800 mb-4">Our Trades-Friendly Way:</h4>
+                <div className="bg-white p-5 rounded-lg shadow-sm border-2 border-green-500">
+                  <div className="text-green-600 font-bold text-lg mb-2">£500-£750 one-time setup</div>
+                  <div className="text-green-600 font-bold text-lg mb-4">+ £150/year maintenance after year one</div>
+                  <p className="text-gray-700 mb-3">That's <span className="font-bold">£500-£750 in year one</span> and just <span className="font-bold">£150 every year after</span>.</p>
+                  <div className="text-2xl font-bold text-green-600 mt-4 mb-2">5-Year Cost: £1,100-£1,350</div>
+                  <p className="text-sm text-gray-700 mt-2">That's less than what they charge for just 8 months!</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8 bg-slate-800 text-white p-5 rounded-lg">
+              <div className="flex items-start">
+                <WhatsAppIcon className="text-green-400 mt-1 mr-3 flex-shrink-0" size={24} />
+                <div>
+                  <h4 className="font-bold text-xl mb-2">Why the yearly fee?</h4>
+                  <p className="text-gray-300">
+                    The £150/year covers your hosting, domain name, SSL security, and ongoing support. It's like £12.50 a month - less than a few coffees - to make sure your website stays fast, secure, and up-to-date. Unlike agencies charging £65+ monthly, we keep it affordable while still giving you the service you deserve.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="max-w-3xl mx-auto mt-10 bg-[#fff5e6] rounded-lg p-5">
+            <div className="flex items-start">
+              <WhatsAppIcon className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+              <div>
+                <h3 className="font-bold text-gray-800 mb-1">Need a payment plan?</h3>
+                <p className="text-gray-700">
+                  Both packages can be split into 2 monthly payments. Just drop us a message on WhatsApp after filling out the questionnaire, and we'll sort it out for you.
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center mt-5">
+              <a 
+                href="https://wa.me/+441234567890" 
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-5 rounded-md transition duration-300 flex items-center space-x-2"
+              >
+                <WhatsAppIcon size={20} />
+                <span>Chat About Payment Options</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Get Online Feature Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
