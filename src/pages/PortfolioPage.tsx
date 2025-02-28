@@ -1,6 +1,10 @@
 import React from 'react';
 import PortfolioCard from '../components/PortfolioCard';
 import CaseStudyCard from '../components/CaseStudyCard';
+import WhatsAppIcon from '../components/WhatsAppIcon';
+import { Link } from 'react-router-dom';
+import { Hammer } from 'lucide-react';
+
 
 const PortfolioPage = () => {
   return (
@@ -101,6 +105,57 @@ const PortfolioPage = () => {
               ]}
               link="#"
             />
+          </div>
+        </div>
+      </section>
+      {/* Add this new section at the bottom of the HomePage before the closing </div> */}
+      <section className="py-16 bg-[#fff5e6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="bg-green-100 p-4 rounded-full">
+                  <WhatsAppIcon className="text-green-600" size={40} />
+                </div>
+                
+                <div className="flex-1">
+                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Got an idea for your website?</h2>
+                  <p className="text-lg text-gray-700 mb-4">
+                    Just chat to your account manager. Send photos, explain what you want, and we'll give you a straightforward quote.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-6">
+                    <strong>No tech talk. No complicated forms.</strong> Just tell us what would make your life easier, and we'll sort it.
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-4">
+                    <a 
+                      href="https://wa.me/+447424163547" 
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center"
+                    >
+                      <WhatsAppIcon size={20} className="mr-2" />
+                      <span>Chat About Your Ideas</span>
+                    </a>
+                    <Link 
+                      to="/get-started" 
+                      className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-6 rounded-md transition duration-300"
+                    >
+                      Start Your Website
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="border-t border-gray-200 bg-gray-50 px-6 py-4">
+              <div className="flex items-start">
+                <Hammer className="text-[#fd8f01] mr-3 flex-shrink-0 mt-1" size={20} />
+                <p className="text-gray-700">
+                  <span className="font-semibold">Builder to Builder:</span> We know what it's like on site. You have ideas and no time for complicated tech stuff. That's why we keep it simple.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

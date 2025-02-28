@@ -80,10 +80,6 @@ const Navbar = () => {
               <WhatsAppIcon size={18} />
               <span className="font-medium">WhatsApp Us</span>
             </a>
-            <div className="flex items-center space-x-2 text-slate-800">
-              <Phone size={18} className="text-[#fd8f01]" />
-              <span className="font-medium">01234 567890</span>
-            </div>
           </div>
           <div className="md:hidden">
             <button

@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import PortfolioPage from './pages/PortfolioPage';
 import GetOnlinePage from './pages/GetOnlinePage';
 import WebsiteQuestionnairePage from './pages/WebsiteQuestionnairePage';
+import ThankYouPage from './pages/ThankYouPage';
 import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/get-online" element={<GetOnlinePage />} />
           <Route path="/get-started" element={<WebsiteQuestionnairePage />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </main>
       <Footer />

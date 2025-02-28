@@ -112,6 +112,28 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Statistics Banner */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-800 text-white rounded-lg p-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+              <div>
+                <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">87%</h3>
+                <p className="text-sm">of customers check a tradesperson's website</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">64%</h3>
+                <p className="text-sm">won't consider trades without a website</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">3.2x</h3>
+                <p className="text-sm">more leads with a website</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* USPs Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -562,110 +584,6 @@ const HomePage = () => {
             >
               Get Started
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Contact Us</h2>
-              <p className="text-xl text-gray-600 mb-6">
-                Have a question or ready to start your project? Fill out the form and we'll get back to you as soon as possible.
-              </p>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-                <h3 className="text-xl font-bold text-slate-800 mb-4">Our Process</h3>
-                <ol className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold mr-3">1</span>
-                    <div>
-                      <h4 className="font-semibold text-slate-800">Consultation</h4>
-                      <p className="text-gray-600">We'll discuss your business goals and website needs.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold mr-3">2</span>
-                    <div>
-                      <h4 className="font-semibold text-slate-800">Proposal</h4>
-                      <p className="text-gray-600">We'll provide a detailed proposal and timeline.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold mr-3">3</span>
-                    <div>
-                      <h4 className="font-semibold text-slate-800">Design & Development</h4>
-                      <p className="text-gray-600">We'll create your website with regular updates.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 font-bold mr-3">4</span>
-                    <div>
-                      <h4 className="font-semibold text-slate-800">Launch</h4>
-                      <p className="text-gray-600">Your website goes live with our full support.</p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            
-            <div>
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Add this new section at the bottom of the HomePage before the closing </div> */}
-      <section className="py-16 bg-[#fff5e6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6 md:p-8">
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div className="bg-green-100 p-4 rounded-full">
-                  <WhatsAppIcon className="text-green-600" size={40} />
-                </div>
-                
-                <div className="flex-1">
-                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-3">Got an idea for your website?</h2>
-                  <p className="text-lg text-gray-700 mb-4">
-                    Just chat to your account manager. Send photos, explain what you want, and we'll give you a straightforward quote.
-                  </p>
-                  <p className="text-lg text-gray-700 mb-6">
-                    <strong>No tech talk. No complicated forms.</strong> Just tell us what would make your life easier, and we'll sort it.
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-4">
-                    <a 
-                      href="https://wa.me/+447424163547" 
-                      target="_blank"
-                      rel="noopener noreferrer" 
-                      className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 flex items-center"
-                    >
-                      <WhatsAppIcon size={20} className="mr-2" />
-                      <span>Chat About Your Ideas</span>
-                    </a>
-                    <Link 
-                      to="/get-started" 
-                      className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-6 rounded-md transition duration-300"
-                    >
-                      Start Your Website
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="border-t border-gray-200 bg-gray-50 px-6 py-4">
-              <div className="flex items-start">
-                <Hammer className="text-[#fd8f01] mr-3 flex-shrink-0 mt-1" size={20} />
-                <p className="text-gray-700">
-                  <span className="font-semibold">Builder to Builder:</span> We know what it's like on site. You have ideas and no time for complicated tech stuff. That's why we keep it simple.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
