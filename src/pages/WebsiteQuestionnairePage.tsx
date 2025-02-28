@@ -10,6 +10,7 @@ interface FormData {
   phoneNumber: string;
   email: string;
   website: string;
+  yearsInBusiness: string;
   services: string[];
   areas: string;
   existingReviews: string[];
@@ -18,6 +19,10 @@ interface FormData {
   preferredColors: string[];
   additionalInfo: string;
   preferredContact: string;
+  referralSource: string;
+  businessChallenges: string;
+  potentialImpact: string;
+  advertisingStruggles: string;
 }
 
 // Define API key from environment variable
@@ -40,6 +45,7 @@ const WebsiteQuestionnairePage = () => {
     phoneNumber: '',
     email: '',
     website: '',
+    yearsInBusiness: '',
     services: [],
     areas: '',
     existingReviews: [],
@@ -47,7 +53,11 @@ const WebsiteQuestionnairePage = () => {
     logoAvailable: 'no',
     preferredColors: [],
     additionalInfo: '',
-    preferredContact: 'whatsapp'
+    preferredContact: 'whatsapp',
+    referralSource: '',
+    businessChallenges: '',
+    potentialImpact: '',
+    advertisingStruggles: ''
   });
   
   const totalSteps = 4;
@@ -135,6 +145,7 @@ const WebsiteQuestionnairePage = () => {
 *Business Details:*
 - Business Name: ${data.businessName}
 - Trade: ${data.tradeName}
+- Years in Business: ${data.yearsInBusiness}
 - Phone: ${data.phoneNumber}
 - Email: ${data.email}
 - Website: ${data.website || 'None'}
@@ -153,8 +164,16 @@ ${data.existingReviews.length > 0 ? data.existingReviews.map(platform => `- ${pl
 - Logo Available: ${data.logoAvailable === 'yes' ? '✅' : '❌'}
 - Color Preferences: ${data.preferredColors.length > 0 ? data.preferredColors.join(', ') : 'None specified'}
 
+*Business Growth:*
+- Current Challenges: ${data.businessChallenges || 'Not provided'}
+- Potential Impact of New Leads: ${data.potentialImpact || 'Not provided'}
+- Advertising Struggles: ${data.advertisingStruggles || 'Not provided'}
+
 *Additional Information:*
 ${data.additionalInfo || 'None provided'}
+
+*Referral Source:*
+${data.referralSource || 'Not specified'}
 
 *Preferred Contact Method:*
 ${data.preferredContact}
@@ -248,6 +267,25 @@ This message was sent from the website questionnaire form.
                     onChange={(e) => updateFormData('businessName', e.target.value)}
                     required
                   />
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    How many years have you been in business?
+                  </label>
+                  <select
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    value={formData.yearsInBusiness}
+                    onChange={(e) => updateFormData('yearsInBusiness', e.target.value)}
+                    required
+                  >
+                    <option value="">Select years in business</option>
+                    <option value="Less than 1 year">Less than 1 year</option>
+                    <option value="1-2 years">1-2 years</option>
+                    <option value="3-5 years">3-5 years</option>
+                    <option value="6-10 years">6-10 years</option>
+                    <option value="10+ years">10+ years</option>
+                  </select>
                 </div>
                 
                 <div>
@@ -504,114 +542,142 @@ This message was sent from the website questionnaire form.
                 
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
-                    How would you prefer us to contact you?
+                    How did you find out about our services?
                   </label>
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <input
-                        type="radio"
-                        id="contact-whatsapp"
-                        name="contact"
-                        className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300"
-                        value="whatsapp"
-                        checked={formData.preferredContact === 'whatsapp'}
-                        onChange={() => updateFormData('preferredContact', 'whatsapp')}
-                      />
-                      <label htmlFor="contact-whatsapp" className="ml-2 text-gray-700 flex items-center">
-                        <WhatsAppIcon size={16} className="mr-1 text-green-500" />
-                        WhatsApp (quickest response)
-                      </label>
-                    </div>
-                    <div className="flex items-center">
-                      <input
-                        type="radio"
-                        id="contact-phone"
-                        name="contact"
-                        className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300"
-                        value="phone"
-                        checked={formData.preferredContact === 'phone'}
-                        onChange={() => updateFormData('preferredContact', 'phone')}
-                      />
-                      <label htmlFor="contact-phone" className="ml-2 text-gray-700">
-                        Phone call
-                      </label>
-                    </div>
-                    <div className="flex items-center">
-                      <input
-                        type="radio"
-                        id="contact-email"
-                        name="contact"
-                        className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300"
-                        value="email"
-                        checked={formData.preferredContact === 'email'}
-                        onChange={() => updateFormData('preferredContact', 'email')}
-                      />
-                      <label htmlFor="contact-email" className="ml-2 text-gray-700">
-                        Email
-                      </label>
-                    </div>
+                  <select
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    value={formData.referralSource}
+                    onChange={(e) => updateFormData('referralSource', e.target.value)}
+                    required
+                  >
+                    <option value="">Select option</option>
+                    <option value="Word of mouth">Word of mouth/Recommendation</option>
+                    <option value="Google search">Google search</option>
+                    <option value="Social media">Social media (Facebook, Instagram, etc.)</option>
+                    <option value="Trade directory">Trade directory</option>
+                    <option value="Local advertisement">Local advertisement</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                
+                <div className="bg-gray-50 p-4 rounded-md">
+                  <h3 className="font-bold text-slate-800 mb-3">Business Growth Reflection</h3>
+                  
+                  <div className="mb-4">
+                    <label className="block text-gray-700 font-medium mb-2">
+                      What challenges are you currently facing in growing your business?
+                    </label>
+                    <textarea
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                      placeholder="e.g. not enough leads, competition, pricing pressure, etc."
+                      rows={3}
+                      value={formData.businessChallenges}
+                      onChange={(e) => updateFormData('businessChallenges', e.target.value)}
+                    ></textarea>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label className="block text-gray-700 font-medium mb-2">
+                      How would a steady flow of quality leads impact your business?
+                    </label>
+                    <textarea
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                      placeholder="e.g. hire more staff, take on bigger projects, expand service areas, etc."
+                      rows={3}
+                      value={formData.potentialImpact}
+                      onChange={(e) => updateFormData('potentialImpact', e.target.value)}
+                    ></textarea>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      Have you struggled with advertising your business in the past?
+                    </label>
+                    <textarea
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                      placeholder="e.g. expensive Google Ads, confusing social media, ineffective flyers, etc."
+                      rows={3}
+                      value={formData.advertisingStruggles}
+                      onChange={(e) => updateFormData('advertisingStruggles', e.target.value)}
+                    ></textarea>
                   </div>
                 </div>
               </div>
               
               {/* What Happens Next section - now shown only on the final step */}
               <div className="mt-8 bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                <h2 className="text-2xl font-bold text-slate-800 mb-4">What Happens Next?</h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  After you submit this form, here's our simple process:
+                <h2 className="text-2xl font-bold text-slate-800 flex items-center mb-4">
+                  <CheckCircle2 className="text-[#fd8f01] mr-2" size={24} />
+                  What Happens Next?
+                </h2>
+                <p className="text-gray-700 mb-6 text-lg">
+                  After submitting, we'll connect on WhatsApp to create your tailored business plan.
                 </p>
                 
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start">
+                <div className="mb-6">
+                  <h3 className="font-bold text-slate-800 mb-4 flex items-center text-lg">
                     <div className="bg-green-100 p-2 rounded-full mr-3">
                       <WhatsAppIcon className="text-green-500" size={20} />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-slate-800">Initial WhatsApp Chat</h3>
-                      <p className="text-gray-700">Your dedicated account manager will message you with a few simple questions about your business, including:</p>
-                      <ul className="mt-2 space-y-1 text-gray-600 list-disc list-inside pl-4">
-                        <li>How long have you been in business?</li>
-                        <li>Do you have social media accounts we can gather info from?</li>
-                        <li>Any existing reviews or content we can use?</li>
+                    Our Simple Process
+                  </h3>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-gray-50 p-4 rounded-md border border-gray-100">
+                      <h4 className="font-semibold text-slate-800 mb-2">1. Research & Planning</h4>
+                      <ul className="space-y-2 text-gray-600">
+                        <li className="flex items-start">
+                          <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                          <span>Expand on your form responses</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                          <span>Research local competition</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                          <span>Identify high-ticket opportunities</span>
+                        </li>
                       </ul>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-blue-100 p-2 rounded-full mr-3">
-                      <Clock className="text-blue-500" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-slate-800">Website Development (48 hours)</h3>
-                      <p className="text-gray-700">We'll build your site based on your answers and keep you updated via WhatsApp.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-[#fff5e6] p-2 rounded-full mr-3">
-                      <CheckCircle2 className="text-[#fd8f01]" size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-slate-800">Review & Launch</h3>
-                      <p className="text-gray-700">You'll review your site and we'll make any adjustments before going live.</p>
+                    
+                    <div className="bg-gray-50 p-4 rounded-md border border-gray-100">
+                      <h4 className="font-semibold text-slate-800 mb-2">2. Development & Launch</h4>
+                      <ul className="space-y-2 text-gray-600">
+                        <li className="flex items-start">
+                          <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                          <span>Take a small deposit to begin work</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                          <span>Regular WhatsApp updates</span>
+                        </li>
+                        <li className="flex items-start">
+                          <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
+                          <span>Ongoing support after launch</span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-green-50 p-4 rounded-md">
+                <div className="bg-[#fff5e6] p-5 rounded-md border border-[#ffe4bc]">
                   <div className="flex">
-                    <Hammer className="text-[#fd8f01] mr-3 flex-shrink-0 mt-1" size={20} />
-                    <p className="text-gray-800">
-                      <span className="font-bold">Builder to Builder:</span> We know you're busy on site. That's why we handle everything and keep communication simple through WhatsApp, calls, texts or email - whatever works best for you.
-                    </p>
+                    <Hammer className="text-[#fd8f01] mr-3 flex-shrink-0 mt-1" size={24} />
+                    <div>
+                      <h3 className="font-bold text-gray-800 mb-2">Our Promise to You</h3>
+                      <p className="text-gray-800">
+                        We don't take the piss. Our goal is to make you money and save you time, so you can spend more time with family and not work for rubbish money. We're committed to getting you the right leads for those high-value jobs.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 bg-[#fff5e6] rounded-lg p-4">
+              <div className="mt-8 bg-[#fff5e6] rounded-lg p-5 border border-[#ffe4bc]">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-[#fd8f01]" />
+                    <Clock className="h-6 w-6 text-[#fd8f01]" />
                   </div>
                   <div className="ml-3">
                     <h3 className="text-lg font-medium text-gray-800">Almost there!</h3>
