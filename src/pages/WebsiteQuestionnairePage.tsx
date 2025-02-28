@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MessageSquare, Hammer, ChevronRight, CheckCircle2, Clock, ArrowLeft } from 'lucide-react';
+import { Hammer, ChevronRight, CheckCircle2, Clock, ArrowLeft } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const WebsiteQuestionnairePage = () => {

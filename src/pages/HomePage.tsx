@@ -9,7 +9,6 @@ import {
   Code, 
   Clock, 
   Hammer,
-  MessageSquare,
   BarChart,
   ShoppingCart,
   Check
@@ -34,10 +33,10 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Websites For Builders <span className="text-[#fd8f01]">In 48 Hours</span>
+              Get Online <span className="text-[#fd8f01]">In 72 Hours</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Get online while you're on the tools. One payment, then we handle everything.
+              Get your phone buzzing again with more work while you're on the tools doing your job. One payment & we handle everything.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
