@@ -11,6 +11,7 @@ import GetOnlinePage from './pages/GetOnlinePage';
 import WebsiteQuestionnairePage from './pages/WebsiteQuestionnairePage';
 import ThankYouPage from './pages/ThankYouPage';
 import ScrollToTop from './components/ScrollToTop';
+import PricesPage from './pages/PricesPage';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/get-online" element={<GetOnlinePage />} />
           <Route path="/get-started" element={<WebsiteQuestionnairePage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/prices" element={<PricesPage />} />
         </Routes>
       </main>
       <Footer />

@@ -1,6 +1,5 @@
 import React from 'react';
-import ServiceCard from '../components/ServiceCard';
-import { Palette, Code, ShoppingCart, Search, BarChart, MessageSquare, Smartphone, Clock, Hammer, Wrench, Check } from 'lucide-react';
+import { Palette, Search, BarChart, Smartphone, Hammer, Check, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
@@ -213,94 +212,6 @@ const ServicesPage = () => {
             </div>
           </div>
           
-          {/* Custom Upgrades Section */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 mt-12">
-            <div className="bg-slate-800 text-white p-6">
-              <div className="flex items-center mb-4">
-                <Wrench size={32} className="text-[#fd8f01] mr-3" />
-                <h3 className="text-2xl font-bold">Custom Upgrades - Just Ask</h3>
-              </div>
-              <p className="text-lg text-gray-300">
-                Got an idea for your website? Need something special? Just ask your account manager.
-              </p>
-            </div>
-            
-            <div className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-green-100 rounded-full p-2 mr-3">
-                    <WhatsAppIcon className="text-green-600" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Send a WhatsApp</h4>
-                    <p className="text-gray-600">
-                      Just snap some photos or describe what you need. No technical explanation required.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-[#fff5e6] rounded-full p-2 mr-3">
-                    <Hammer className="text-[#fd8f01]" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Builder to Builder</h4>
-                    <p className="text-gray-600">
-                      We'll talk through your idea in plain English - no tech jargon or upselling.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-blue-100 rounded-full p-2 mr-3">
-                    <Check className="text-blue-600" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Straightforward Quote</h4>
-                    <p className="text-gray-600">
-                      Get a clear price for your idea with no hidden costs or surprises.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 bg-purple-100 rounded-full p-2 mr-3">
-                    <Clock className="text-purple-600" size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Quick Turnaround</h4>
-                    <p className="text-gray-600">
-                      Most custom features can be added within 24-48 hours of approval.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="border-t border-gray-200 pt-6 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4">
-                <p className="text-gray-700 font-medium mb-4 sm:mb-0">
-                  What could make your life easier on site? Let's make it happen.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <a 
-                    href="https://wa.me/+447424163547" 
-                    target="_blank"
-                    rel="noopener noreferrer" 
-                    className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 flex items-center"
-                  >
-                    <WhatsAppIcon size={18} className="mr-2" />
-                    <span>Discuss Your Idea</span>
-                  </a>
-                  <Link 
-                    to="/get-started" 
-                    className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-medium py-2 px-4 rounded-md transition duration-300"
-                  >
-                    Start Your Website
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          
           {/* Pricing Section Teaser */}
           <div className="mt-16 bg-gray-50 rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold text-slate-800 mb-4">Simple, Straightforward Pricing</h3>
@@ -343,7 +254,7 @@ const ServicesPage = () => {
             </div>
             
             <Link 
-              to="/get-online" 
+              to="/prices" 
               className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300 inline-block"
             >
               See Detailed Pricing Options

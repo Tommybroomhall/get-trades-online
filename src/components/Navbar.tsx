@@ -59,6 +59,7 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link to="/" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Home</Link>
               <Link to="/about" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">About</Link>
+              <Link to="/prices" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Prices</Link>
               <Link 
                 to="/get-online" 
                 className="bg-[#fd8f01] text-white hover:bg-[#e68101] px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300"
@@ -109,6 +110,13 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               About
+            </Link>
+            <Link 
+              to="/prices" 
+              className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
+              onClick={closeMenu}
+            >
+              Prices
             </Link>
             <Link 
               to="/get-online" 
