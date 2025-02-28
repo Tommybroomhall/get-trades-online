@@ -23,6 +23,9 @@ interface FormData {
   businessChallenges: string;
   potentialImpact: string;
   advertisingStruggles: string;
+  profitableWork: string;
+  domainAvailable: string;
+  domainName: string;
 }
 
 // Define API key from environment variable
@@ -57,7 +60,10 @@ const WebsiteQuestionnairePage = () => {
     referralSource: '',
     businessChallenges: '',
     potentialImpact: '',
-    advertisingStruggles: ''
+    advertisingStruggles: '',
+    profitableWork: '',
+    domainAvailable: 'no',
+    domainName: ''
   });
   
   const totalSteps = 4;
@@ -162,12 +168,15 @@ ${data.existingReviews.length > 0 ? data.existingReviews.map(platform => `- ${pl
 *Assets:*
 - Photos Available: ${data.photosAvailable === 'yes' ? '✅' : '❌'}
 - Logo Available: ${data.logoAvailable === 'yes' ? '✅' : '❌'}
+- Domain Available: ${data.domainAvailable === 'yes' ? '✅' : '❌'}
+- Domain Name: ${data.domainAvailable === 'yes' ? data.domainName : 'Needs to purchase one'}
 - Color Preferences: ${data.preferredColors.length > 0 ? data.preferredColors.join(', ') : 'None specified'}
 
 *Business Growth:*
 - Current Challenges: ${data.businessChallenges || 'Not provided'}
 - Potential Impact of New Leads: ${data.potentialImpact || 'Not provided'}
 - Advertising Struggles: ${data.advertisingStruggles || 'Not provided'}
+- Most Profitable Work: ${data.profitableWork || 'Not provided'}
 
 *Additional Information:*
 ${data.additionalInfo || 'None provided'}
@@ -178,16 +187,63 @@ ${data.referralSource || 'Not specified'}
 *Preferred Contact Method:*
 ${data.preferredContact}
 
-This message was sent from the website questionnaire form.
-    `;
+
+PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
+    `.trim();
   };
   
   const serviceOptions = [
-    'Plumbing', 'Electrical', 'Building', 'Carpentry', 
-    'Painting & Decorating', 'Roofing', 'Landscaping', 
-    'Plastering', 'Tiling', 'Flooring', 'Heating & Gas',
-    'Windows & Doors', 'Kitchen Fitting', 'Bathroom Fitting',
-    'General Handyman', 'Other'
+    'Appliance Repair',
+    'Bathroom Fitting',
+    'Block Paving & Driveways',
+    'Bricklaying',
+    'Building',
+    'Carpentry',
+    'Carpet & Upholstery Cleaning',
+    'Chimney Sweep',
+    'Cleaning Services',
+    'Concrete Work',
+    'Damp Proofing',
+    'Demolition',
+    'Drainage',
+    'Electrical',
+    'Extensions',
+    'Fencing',
+    'Flat Roofing',
+    'Flooring',
+    'Gardening',
+    'Garage Doors',
+    'Groundwork',
+    'Guttering',
+    'Heating & Gas',
+    'Home Security',
+    'Insulation',
+    'Kitchen Fitting',
+    'Landscaping',
+    'Locksmith',
+    'Loft Conversion',
+    'Painting & Decorating',
+    'Paving',
+    'Pest Control',
+    'Plastering',
+    'Plumbing',
+    'Pressure Washing',
+    'Restoration',
+    'Roofing',
+    'Scaffolding',
+    'Screed & Resin Flooring',
+    'Septic Tanks',
+    'Skip Hire',
+    'Solar Panel Installation',
+    'Stone Masonry',
+    'Tiling',
+    'Tree Surgery',
+    'Waste Removal',
+    'Waterproofing',
+    'Window Cleaning',
+    'Windows & Doors',
+    'General Handyman',
+    'Other'
   ];
   
   const reviewPlatformOptions = [
@@ -214,7 +270,7 @@ This message was sent from the website questionnaire form.
         <div className="bg-white rounded-t-lg shadow-sm p-6 border-b border-gray-200">
           <h1 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2">Get Your Trade Website Started</h1>
           <p className="text-gray-600">
-            Fill out this quick form and we'll have your website ready in 48 hours. 
+            Fill out this quick form and we'll aim to have your website ready in 72 hours. 
             Takes less than 5 minutes - perfect for your lunch break.
           </p>
           
@@ -345,28 +401,6 @@ This message was sent from the website questionnaire form.
               <div className="space-y-6">
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
-                    What services do you offer? (tick all that apply)
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    {serviceOptions.map((service) => (
-                      <div key={service} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          id={`service-${service}`}
-                          className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300 rounded"
-                          checked={formData.services.includes(service)}
-                          onChange={() => handleCheckboxChange('services', service)}
-                        />
-                        <label htmlFor={`service-${service}`} className="ml-2 text-gray-700">
-                          {service}
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div>
-                  <label className="block text-gray-700 font-medium mb-2">
                     What areas do you serve? (towns, counties or postcodes)
                   </label>
                   <textarea
@@ -493,6 +527,63 @@ This message was sent from the website questionnaire form.
                       </label>
                     </div>
                   </div>
+                  {formData.logoAvailable === 'no' && (
+                    <p className="mt-1 text-sm text-gray-500">Note: There will be an additional cost for logo design.</p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Do you already have a domain name (website address)?
+                  </label>
+                  <div className="flex space-x-4">
+                    <div className="flex items-center">
+                      <input
+                        type="radio"
+                        id="domain-yes"
+                        name="domain"
+                        className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300"
+                        value="yes"
+                        checked={formData.domainAvailable === 'yes'}
+                        onChange={() => updateFormData('domainAvailable', 'yes')}
+                      />
+                      <label htmlFor="domain-yes" className="ml-2 text-gray-700">
+                        Yes
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <input
+                        type="radio"
+                        id="domain-no"
+                        name="domain"
+                        className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300"
+                        value="no"
+                        checked={formData.domainAvailable === 'no'}
+                        onChange={() => updateFormData('domainAvailable', 'no')}
+                      />
+                      <label htmlFor="domain-no" className="ml-2 text-gray-700">
+                        No - we'll need to purchase one
+                      </label>
+                    </div>
+                  </div>
+                  {formData.domainAvailable === 'no' && (
+                    <p className="mt-1 text-sm text-gray-500">Note: There will be an additional cost for domain registration.</p>
+                  )}
+                  
+                  {formData.domainAvailable === 'yes' && (
+                    <div className="mt-3">
+                      <label className="block text-gray-700 text-sm font-medium mb-1">
+                        What is your domain name?
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                        placeholder="e.g. www.yourbusiness.com"
+                        value={formData.domainName}
+                        onChange={(e) => updateFormData('domainName', e.target.value)}
+                      />
+                    </div>
+                  )}
                 </div>
                 
                 <div>
@@ -561,7 +652,7 @@ This message was sent from the website questionnaire form.
                 </div>
                 
                 <div className="bg-gray-50 p-4 rounded-md">
-                  <h3 className="font-bold text-slate-800 mb-3">Business Growth Reflection</h3>
+                  <h3 className="font-bold text-slate-800 mb-3">Business Growth Reflection <span className="text-sm font-normal text-gray-600">(optional but helps with our research)</span></h3>
                   
                   <div className="mb-4">
                     <label className="block text-gray-700 font-medium mb-2">
@@ -589,7 +680,7 @@ This message was sent from the website questionnaire form.
                     ></textarea>
                   </div>
                   
-                  <div>
+                  <div className="mb-4">
                     <label className="block text-gray-700 font-medium mb-2">
                       Have you struggled with advertising your business in the past?
                     </label>
@@ -600,6 +691,20 @@ This message was sent from the website questionnaire form.
                       value={formData.advertisingStruggles}
                       onChange={(e) => updateFormData('advertisingStruggles', e.target.value)}
                     ></textarea>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      What type of work is most profitable for you that you also enjoy doing?
+                    </label>
+                    <textarea
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                      placeholder="e.g. bathroom renovations, emergency callouts, commercial installations, etc."
+                      rows={3}
+                      value={formData.profitableWork}
+                      onChange={(e) => updateFormData('profitableWork', e.target.value)}
+                    ></textarea>
+                    <p className="mt-1 text-sm text-gray-500">This helps us target your ideal customers in our research</p>
                   </div>
                 </div>
               </div>
@@ -646,7 +751,7 @@ This message was sent from the website questionnaire form.
                       <ul className="space-y-2 text-gray-600">
                         <li className="flex items-start">
                           <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
-                          <span>Take a small deposit to begin work</span>
+                          <span>Payment only after your website is completed</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircle2 className="text-green-500 mr-2 flex-shrink-0 mt-1" size={16} />
@@ -667,7 +772,7 @@ This message was sent from the website questionnaire form.
                     <div>
                       <h3 className="font-bold text-gray-800 mb-2">Our Promise to You</h3>
                       <p className="text-gray-800">
-                        We don't take the piss. Our goal is to make you money and save you time, so you can spend more time with family and not work for rubbish money. We're committed to getting you the right leads for those high-value jobs.
+                        Our goal is to make you money and save you time, so you can spend more time with family and not work for rubbish money. We're committed to getting you the right leads for those high-value jobs.
                       </p>
                     </div>
                   </div>
@@ -683,7 +788,7 @@ This message was sent from the website questionnaire form.
                     <h3 className="text-lg font-medium text-gray-800">Almost there!</h3>
                     <p className="mt-1 text-gray-600">
                       Once you submit this form, we'll be in touch within 12 hours to confirm a few details,
-                      then your website will be ready in just 48 hours. <strong>Pay once, then we handle everything.</strong>
+                      then we aim to have your website ready in 72 hours. <strong>You only pay after your website is completed.</strong>
                     </p>
                   </div>
                 </div>
@@ -772,7 +877,7 @@ This message was sent from the website questionnaire form.
             </div>
             <div className="flex items-center">
               <Clock className="text-[#fd8f01] mr-2" size={20} />
-              <span className="font-medium">98% of sites delivered in 48 hours</span>
+              <span className="font-medium">98% of sites delivered in 72 hours</span>
             </div>
           </div>
         </div>
