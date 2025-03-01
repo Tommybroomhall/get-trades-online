@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import SEO from '../components/SEO';
 
 const GetOnlinePage = () => {
   // Calculate delivery date (today + 3 days)
@@ -15,6 +16,13 @@ const GetOnlinePage = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Websites For Trades | No Tech Headaches | Get Online by Friday"
+        description="Professional websites for tradespeople delivered in 72 hours. One payment, we handle everything. No tech knowledge needed, just WhatsApp us and we do the rest."
+        keywords="tradesperson website, builder website, plumber website, electrician website, tradesperson web design, easy websites for trades"
+        canonicalUrl="https://gettradesonline.com/get-online"
+      />
+      
       {/* Combined Hero Section with Statistics */}
       <section 
         className="relative pt-12 pb-24 md:pt-16 md:pb-32"

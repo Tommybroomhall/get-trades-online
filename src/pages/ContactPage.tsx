@@ -2,10 +2,18 @@ import React from 'react';
 import ContactForm from '../components/ContactForm';
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="Contact Get Trades Online | WhatsApp Support for Tradespeople"
+        description="Need help getting your tradesperson website online? Contact us via WhatsApp for immediate assistance or fill out our contact form. We respond within 24 hours."
+        keywords="contact trades website service, tradesperson website support, WhatsApp website support, get trades online contact"
+        canonicalUrl="https://gettradesonline.com/contact"
+      />
+      
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">

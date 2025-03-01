@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight, Clock, Wrench } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const PricesPage = () => {
   // Custom WhatsApp icon component
@@ -45,7 +46,14 @@ const PricesPage = () => {
   );
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="Tradesperson Website Pricing | One-time Payment, No Subscriptions"
+        description="Affordable website packages for tradespeople with one-time payment options. No monthly subscriptions or hidden fees. Compare our pricing with other web agencies."
+        keywords="tradesperson website cost, builder website pricing, plumber website package, electrician website price, one-time website payment"
+        canonicalUrl="https://gettradesonline.com/prices"
+      />
+      
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

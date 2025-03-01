@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import SEO from '../components/SEO';
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="About Get Trades Online | Built by a Tradesperson for Tradespeople"
+        description="Learn about Get Trades Online, founded by a former tradesperson who understands the unique website needs of builders, plumbers, and electricians."
+        keywords="tradesperson website service, about get trades online, websites for trades, tradesperson-focused web design"
+        canonicalUrl="https://gettradesonline.com/about"
+      />
+      
       {/* Hero Section */}
       <section 
         className="relative bg-slate-900 text-white py-16 md:py-20"

@@ -3,19 +3,14 @@ import { Link } from 'react-router-dom';
 import { 
   Palette, 
   Search, 
-  Smartphone, 
-  Zap, 
-  Globe, 
   Code, 
-  Clock, 
   Hammer,
-  BarChart,
-  ShoppingCart,
   Check
 } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
-import PortfolioCard from '../components/PortfolioCard';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import SEO from '../components/SEO';
+import StructuredData from '../components/StructuredData';
 
 const HomePage = () => {
   // Calculate delivery date (today + 3 days)
@@ -27,6 +22,25 @@ const HomePage = () => {
 
   return (
     <div>
+      <SEO 
+        title="Websites for Tradespeople | Get Online in 72 Hours"
+        description="Professional websites for builders, plumbers, and electricians. One-time payment, no monthly fees. Get your trade business online with a mobile-friendly website in just 72 hours."
+        keywords="tradesperson website, builder website, plumber website, electrician website, one-time payment website, no subscription website"
+        canonicalUrl="https://gettradesonline.com/"
+      />
+      
+      <StructuredData
+        name="Get Trades Online"
+        description="Professional websites for tradespeople. One-time payment, no subscriptions. Get online with a mobile-friendly website in just 72 hours."
+        url="https://gettradesonline.com"
+        telephone="+447424163547"
+        priceRange="£££"
+        sameAs={[
+          "https://www.facebook.com/gettradesonline",
+          "https://www.instagram.com/gettradesonline"
+        ]}
+      />
+      
       {/* Hero Section */}
       <section 
         className="relative bg-slate-900 text-white py-20 md:py-32"
