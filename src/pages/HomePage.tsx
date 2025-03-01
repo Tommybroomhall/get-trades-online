@@ -45,7 +45,7 @@ const HomePage = () => {
                 Need a website to keep you busy? <span className="text-[#fd8f01]" style={{ fontSize: 'calc(1.5rem + 1px)' }}>You're in the right place.</span>
               </h1>
               <p className="text-xl md:text-2xl mb-6 text-gray-300">
-                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Fill out our quick questionnaire</span>, then chat with your personal account manager via <span className="text-[#25D366] font-bold" style={{ fontSize: 'calc(1.25rem + 1px)' }}>WhatsApp</span>. Your site will be live by <span className="text-[#fd8f01] font-semibold" style={{ fontSize: 'calc(1.25rem + 1px)' }}>{formattedDeliveryDate}</span>.
+                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Fill out our quick questionnaire</span>, then chat with your personal account manager via <span className="text-[#25D366] font-bold" style={{ fontSize: 'calc(1.25rem + 1px)' }}>WhatsApp</span>. We could get you up and running by <span className="text-[#fd8f01] font-semibold" style={{ fontSize: 'calc(1.25rem + 1px)' }}>{formattedDeliveryDate}</span>.
               </p>
               
               <div className="bg-slate-800 bg-opacity-70 p-4 rounded-lg mb-8">
