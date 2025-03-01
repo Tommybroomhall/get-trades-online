@@ -75,7 +75,7 @@ const ContactPage = () => {
                 Ready to boost your trade business with a website that actually brings in jobs?
               </p>
               <div className="bg-[#fff5e6] p-4 rounded-md mb-6">
-                <h4 className="font-bold text-gray-800 mb-3">Get Your Website in 48 Hours</h4>
+                <h4 className="font-bold text-gray-800 mb-3">Get Your Website in 3 Days not 3 weeks</h4>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-[#fd8f01] mr-2">✓</span>

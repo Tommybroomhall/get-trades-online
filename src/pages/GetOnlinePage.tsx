@@ -342,8 +342,8 @@ const GetOnlinePage = () => {
             {/* Story 1 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12" 
-                alt="Johnson Plumbing Website" 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740850892/481044673_2232268817228929_4486988628446735392_n_giivtf.jpg" 
+                alt="Johnson Plumbing Van" 
                 className="w-full h-48 object-cover"
                 loading="lazy"
                 width="400"
@@ -351,18 +351,19 @@ const GetOnlinePage = () => {
               />
               <div className="p-6">
                 <h3 className="font-bold text-xl text-slate-800 mb-1">Johnson Plumbing</h3>
-                <p className="text-[#fd8f01] font-semibold mb-4">Increased revenue by 40%</p>
-                
-                <div className="mb-4 text-yellow-500 flex">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
                 
                 <p className="text-gray-700 italic mb-4">
                   "Since launching my website, I've been able to charge premium rates and still stay booked solid. Now I work fewer hours but make more money, giving me more time with my family."
                 </p>
                 
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div className="w-10 h-10 bg-white rounded-full mr-3 flex items-center justify-center overflow-hidden border border-gray-200">
+                    <img 
+                      src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740851021/451430775_793872029400696_77012643611861594_n_imbyya.jpg" 
+                      alt="Johnson Plumbing Logo" 
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
                   <div>
                     <p className="font-medium">Dave Johnson</p>
                     <p className="text-sm text-gray-500">Plumber, Leeds</p>
@@ -374,27 +375,31 @@ const GetOnlinePage = () => {
             {/* Story 2 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e" 
-                alt="Williams Electrical Website" 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740851642/475831149_1338596600909546_856484043242077835_n_lzimqc.jpg" 
+                alt="Custom Woodworx Kitchens & Carpentry Example" 
                 className="w-full h-48 object-cover"
+                loading="lazy"
+                width="400"
+                height="200"
               />
               <div className="p-6">
-                <h3 className="font-bold text-xl text-slate-800 mb-1">Williams Electrical</h3>
-                <p className="text-[#fd8f01] font-semibold mb-4">Doubled client base in 6 months</p>
-                
-                <div className="mb-4 text-yellow-500 flex">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
+                <h3 className="font-bold text-xl text-slate-800 mb-1">Custom Woodworx Kitchens & Carpentry</h3>
                 
                 <p className="text-gray-700 italic mb-4">
-                  "My professional website set me apart from other sparkies in the area. I can now focus on bigger commercial jobs that pay better and are more interesting. Best business decision I ever made."
+                  "I had no idea how much work I was missing until I got my website. The quality of inquiries is much higher, and clients come to me already knowing what we can do. I'm now booked months in advance for custom kitchen installations."
                 </p>
                 
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div className="w-10 h-10 bg-white rounded-full mr-3 flex items-center justify-center overflow-hidden border border-gray-200">
+                    <img 
+                      src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740851642/249182591_601724691263411_6691079301606056254_n_xftz5u.jpg" 
+                      alt="Custom Woodworx Logo" 
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
                   <div>
-                    <p className="font-medium">Sarah Williams</p>
-                    <p className="text-sm text-gray-500">Electrician, Manchester</p>
+                    <p className="font-medium">Jamie Hoare</p>
+                    <p className="text-sm text-gray-500">Carpenter, Bristol</p>
                   </div>
                 </div>
               </div>
@@ -403,90 +408,35 @@ const GetOnlinePage = () => {
             {/* Story 3 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" 
-                alt="Davis Construction Website" 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1740854868/unnamed_xf4gml.webp" 
+                alt="Cheshire Painting and Decorating - Room Example" 
                 className="w-full h-48 object-cover"
+                loading="lazy"
+                width="400"
+                height="200"
               />
               <div className="p-6">
-                <h3 className="font-bold text-xl text-slate-800 mb-1">Davis Construction</h3>
-                <p className="text-[#fd8f01] font-semibold mb-4">Landed 3 major renovation projects</p>
-                
-                <div className="mb-4 text-yellow-500 flex">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
+                <h3 className="font-bold text-xl text-slate-800 mb-1">Cheshire Painting and Decorating</h3>
                 
                 <p className="text-gray-700 italic mb-4">
-                  "Having a professional website gave clients confidence in my company. I'm now taken more seriously and can compete for larger projects against bigger firms. It's completely changed my business image."
+                  "Get Trades Online got me up and running in no time. I was shocked at how easy it is to manage the website. It looks so professional and has already brought in several high-end clients. The process was completely hassle-free."
                 </p>
                 
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div className="w-10 h-10 bg-white rounded-full mr-3 flex items-center justify-center overflow-hidden border border-gray-200">
+                    <img 
+                      src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740854868/unnamed_1_rjt2va.webp" 
+                      alt="Cheshire Painting and Decorating Logo" 
+                      className="w-8 h-8 object-contain"
+                    />
+                  </div>
                   <div>
-                    <p className="font-medium">Mark Davis</p>
-                    <p className="text-sm text-gray-500">Builder, Birmingham</p>
+                    <p className="font-medium">Paul Roberts</p>
+                    <p className="text-sm text-gray-500">Painter & Decorator, Cheshire</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          {/* Additional Value Proposition */}
-          <div className="mt-12 bg-white rounded-lg p-6 shadow-md">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">What a website truly means for your trade</h3>
-                
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <div className="bg-green-100 p-1 rounded-full mr-3 mt-1">
-                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    </div>
-                    <div>
-                      <p className="text-gray-700">More time with family</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-green-100 p-1 rounded-full mr-3 mt-1">
-                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    </div>
-                    <div>
-                      <p className="text-gray-700">Professional credibility</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-green-100 p-1 rounded-full mr-3 mt-1">
-                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    </div>
-                    <div>
-                      <p className="text-gray-700">Better work-life balance</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="md:w-1/2 bg-[#fff5e6] p-5 rounded-lg">
-                <h3 className="text-xl font-bold text-slate-800 mb-3 text-center">Hear it from an ex-builder:</h3>
-                <p className="text-gray-700 mb-4">
-                  "I spent 15 years on the tools before moving into websites. The tradespeople who succeed today all have one thing in common - a professional online presence. It's not just about looking good - it's about making your life easier."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p className="font-medium">Mike Thompson</p>
-                    <p className="text-sm text-gray-500">Founder, GetTradesOnline</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-10 text-center">
-            <Link 
-              to="/get-started" 
-              className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
-            >
-              Get Your Website Started Today
-            </Link>
           </div>
         </div>
       </section> 
