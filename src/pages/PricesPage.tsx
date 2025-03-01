@@ -78,11 +78,7 @@ const PricesPage = () => {
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    <span className="text-gray-700">Domain name setup</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    <span className="text-gray-700">Business email setup</span>
+                    <span className="text-gray-700">WhatsApp Support</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
@@ -90,7 +86,7 @@ const PricesPage = () => {
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    <span className="text-gray-700">Contact form</span>
+                    <span className="text-gray-700">Dives Customers into your business</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
@@ -173,8 +169,8 @@ const PricesPage = () => {
                   All websites require ongoing hosting and maintenance to stay secure and up-to-date.
                 </p>
                 <div className="bg-white p-4 rounded-md shadow-sm border border-gray-100">
-                  <p className="text-slate-800 font-medium">£12.99/month or £129/year (save 17%)</p>
-                  <p className="text-sm text-gray-500 mt-1">Includes domain renewal, security updates, and basic SEO monitoring</p>
+                  <p className="text-slate-800 font-medium">£350/year</p>
+                  <p className="text-sm text-gray-500 mt-1">Includes domain name renewal, regular security updates, and SEO updates and a review of the site every year, this also includes the hosting for the year.</p>
                 </div>
               </div>
               
@@ -202,7 +198,7 @@ const PricesPage = () => {
                     <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
                     <div>
                       <span className="text-slate-700 font-medium">E-commerce functionality</span>
-                      <p className="text-sm text-gray-500">Starting at £299</p>
+                      <p className="text-sm text-gray-500">Starting at £699</p>
                     </div>
                   </li>
                 </ul>
@@ -297,7 +293,7 @@ const PricesPage = () => {
               <div>
                 <h4 className="text-lg font-semibold text-slate-700 mb-2">Do I need to pay for hosting right away?</h4>
                 <p className="text-gray-600">
-                  No, your website package includes the first month of hosting. After that, you can choose monthly or annual hosting plans.
+                  No, your website package includes the first month of hosting. After that, its an annual payment.
                 </p>
               </div>
               
@@ -311,7 +307,7 @@ const PricesPage = () => {
               <div>
                 <h4 className="text-lg font-semibold text-slate-700 mb-2">How long will it take to build my website?</h4>
                 <p className="text-gray-600">
-                  Most trade websites are completed within 2-3 weeks from the date we receive all your content and information.
+                  Most trade websites are completed within 2-3 Days from the date we receive all your content and information.
                 </p>
               </div>
               
