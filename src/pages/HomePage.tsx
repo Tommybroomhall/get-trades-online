@@ -22,9 +22,7 @@ const HomePage = () => {
   const deliveryDate = new Date();
   deliveryDate.setDate(deliveryDate.getDate() + 3);
   const formattedDeliveryDate = deliveryDate.toLocaleDateString('en-GB', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long'
+    weekday: 'long'
   });
 
   return (
@@ -49,9 +47,13 @@ const HomePage = () => {
               </p>
               
               <div className="bg-slate-800 bg-opacity-70 p-4 rounded-lg mb-8">
+                <h3 className="text-white text-lg font-semibold mb-3 flex items-center">
+                  <WhatsAppIcon className="text-green-400 mr-2 flex-shrink-0" size={22} />
+                  <span>All Services Delivered via <span className="text-[#25D366]">WhatsApp</span></span>
+                </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <WhatsAppIcon className="text-green-400 mt-1 mr-3 flex-shrink-0" size={20} />
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
                     <span style={{ fontSize: 'calc(1rem + 1px)' }}>Personal account manager to guide you through the entire process</span>
                   </li>
                   <li className="flex items-start">
@@ -60,7 +62,7 @@ const HomePage = () => {
                   </li>
                   <li className="flex items-start">
                     <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
-                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Get real-time progress updates as your site comes to life</span>
+                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Get real-time progress updates and weekly website stats</span>
                   </li>
                 </ul>
               </div>
@@ -168,41 +170,40 @@ const HomePage = () => {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4" style={{ fontSize: 'calc(2rem + 1px)' }}>Your Personal Website Team, On WhatsApp</h2>
               <p className="text-xl text-gray-600 mb-6">
-                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Complete our questionnaire to get started</span>, then work with your personal account manager. Need a change? <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Our streamlined process makes it easy</span>. We'll keep you updated at every step and have your site ready within <strong style={{ fontSize: 'calc(1.25rem + 1px)' }}>72 hours</strong>.
+                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Complete our questionnaire to get started</span>, then work with your personal account manager via <span className="text-[#25D366] font-bold">WhatsApp</span>. Need a change? <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Our streamlined process makes it easy</span>. We'll keep you updated at every step and have your site ready within <strong style={{ fontSize: 'calc(1.25rem + 1px)' }}>72 hours</strong>.
               </p>
               
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
-                  <span style={{ fontSize: 'calc(1rem + 1px)' }}>Custom website ready in just 72 hours</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
-                  <span style={{ fontSize: 'calc(1rem + 1px)' }}>Simple questionnaire to gather all your requirements</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
-                  <span style={{ fontSize: 'calc(1rem + 1px)' }}>Real-time progress updates as we build</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
-                  <span style={{ fontSize: 'calc(1rem + 1px)' }}>Quick changes and updates whenever you need them</span>
-                </li>
-              </ul>
-              
-              <div className="flex flex-wrap gap-4">
-                <Link 
-                  to="/get-started" 
-                  className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
-                >
-                  <span style={{ fontSize: 'calc(1rem + 1px)' }}>Learn More</span>
-                </Link>
+              <div className="bg-gray-50 p-5 rounded-lg mb-8">
+                <h3 className="font-bold text-slate-800 mb-4 flex items-center">
+                  <WhatsAppIcon className="text-green-400 mr-2 flex-shrink-0" size={22} />
+                  <span style={{ fontSize: 'calc(1.125rem + 1px)' }}>Everything managed through WhatsApp:</span>
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Custom website ready in just 72 hours with progress updates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Submit change requests and get help directly from your account manager</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Receive weekly performance stats and visitor analytics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>24/7 assistance and technical support from your personal team</span>
+                  </li>
+                </ul>
               </div>
+              
+              
             </div>
             
             <div className="order-1 lg:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1618090584176-7132b9911657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740799513/low-view-carpenter-worker_j74iwc.jpg" 
                 alt="Tradesperson using digital tablet at construction site" 
                 className="w-full h-auto rounded-lg shadow-md"
               />
@@ -244,20 +245,7 @@ const HomePage = () => {
             />
           </div>
           
-          <div className="mt-12 bg-white p-6 rounded-lg shadow-sm">
-            <h3 className="text-xl font-bold text-slate-800 mb-4 text-center" style={{ fontSize: 'calc(1.25rem + 1px)' }}>Need Additional Services?</h3>
-            <p className="text-gray-700 text-center mb-6" style={{ fontSize: 'calc(1rem + 1px)' }}>
-              We offer premium add-ons including <span style={{ fontSize: 'calc(1.125rem + 1px)' }}>e-commerce, content creation, review management, and digital marketing</span>. Just ask your account manager for details and pricing.
-            </p>
-            <div className="text-center">
-              <Link 
-                to="/get-started" 
-                className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300"
-              >
-                <span style={{ fontSize: 'calc(1rem + 1px)' }}>Get Started</span>
-              </Link>
-            </div>
-          </div>
+         
         </div>
       </section>
 

@@ -484,6 +484,80 @@ const GetOnlinePage = () => {
       </section> 
 
       
+      {/* Add this after the Benefits Section but before the Pricing Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Easy Website Management</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              No complicated logins or tech knowledge needed. Just message your account manager.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <h3 className="text-2xl font-bold text-slate-800 mb-6">Need Website Changes?</h3>
+              <p className="text-lg text-gray-700 mb-6">
+                Just WhatsApp your account manager with what you need. We handle all the technical work for you.
+              </p>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h4 className="font-bold text-xl text-slate-800 mb-4">How It Works:</h4>
+                <ol className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">1</span>
+                    <div>
+                      <p className="text-gray-700">Message your account manager via WhatsApp</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">2</span>
+                    <div>
+                      <p className="text-gray-700">Tell us what changes you need</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">3</span>
+                    <div>
+                      <p className="text-gray-700">We'll make the updates for you</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">4</span>
+                    <div>
+                      <p className="text-gray-700">Changes live within 24 hours</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              
+             
+            </div>
+            
+            <div className="order-1 lg:order-2 relative">
+              <img 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740798991/young-man-t-shirt-jacket-hat-holding-mobile-phone-looking-confused_pqlhz9.jpg" 
+                alt="Young man looking confused while using mobile phone" 
+                className="w-full rounded-lg shadow-lg"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs hidden md:block">
+                <div className="flex items-start space-x-3">
+                  <div className="bg-green-100 rounded-full p-2">
+                    <WhatsAppIcon className="text-green-500" size={24} />
+                  </div>
+                  <div>
+                    <p className="text-gray-800 font-medium mb-1">Need to add new photos?</p>
+                    <p className="text-gray-600 text-sm">Just WhatsApp them to me and I'll add them to your gallery within 24 hours.</p>
+                    <p className="text-gray-500 text-xs mt-1">Your account manager</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Benefits Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -773,340 +847,11 @@ const GetOnlinePage = () => {
       </section>
 
       
-          {/* Additional Benefits Section */}
-          <div className="mt-12 bg-slate-50 rounded-lg p-8 shadow-md">
-            <h3 className="text-2xl font-bold mb-6 text-center text-slate-800">The Real-Life Impact Our Clients See</h3>
-            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">Real WhatsApp messages from real tradespeople who transformed their businesses</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {/* First WhatsApp chat */}
-              <div className="rounded-lg overflow-hidden shadow-md border border-gray-200">
-                {/* WhatsApp header */}
-                <div className="bg-[#128C7E] text-white p-3 flex items-center">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden mr-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/men/32.jpg" 
-                      alt="Mark" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">Mark Edwards</p>
-                    <p className="text-xs opacity-80">Electrician, Leeds</p>
-                  </div>
-                </div>
-                
-                {/* Chat area */}
-                <div className="bg-[#e5ded8] p-3 h-[320px] overflow-y-auto">
-                  <div className="flex flex-col space-y-3">
-                    {/* Account manager message */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">Hi Mark! Just checking in to see how things are going with your new website. Any feedback so far?</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">14:22</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client reply */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">Just wanted to let you know that since the website went live, things have completely changed for me.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">14:45</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client continue */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">I used to work 7 days a week just to keep up with bills. Now I take weekends off with my kids and still make more than before.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">14:46</p>
-                      </div>
-                    </div>
-                    
-                    {/* Account manager response */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">That's amazing to hear, Mark! Family time is priceless. Have you been able to be more selective with your jobs?</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">14:50</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client response */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">Absolutely! I'm turning down small jobs now and focusing on complete home rewires. The customers from the website are higher quality too.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">15:02</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Date footer */}
-                <div className="bg-white p-2 text-center text-xs text-gray-500">
-                  Messages from June 14, 2024 • Managed by Emma
-                </div>
-              </div>
-              
-              {/* Second WhatsApp chat */}
-              <div className="rounded-lg overflow-hidden shadow-md border border-gray-200">
-                {/* WhatsApp header */}
-                <div className="bg-[#128C7E] text-white p-3 flex items-center">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden mr-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/women/48.jpg" 
-                      alt="Sarah" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">Sarah Palmer</p>
-                    <p className="text-xs opacity-80">Plumber, Manchester</p>
-                  </div>
-                </div>
-                
-                {/* Chat area */}
-                <div className="bg-[#e5ded8] p-3 h-[320px] overflow-y-auto">
-                  <div className="flex flex-col space-y-3">
-                    {/* Client message */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">Hey Jack, need to update my website with the new bathroom renovation photos. The one I just finished is my best work yet!</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">09:15</p>
-                      </div>
-                    </div>
-                    
-                    {/* Account manager reply */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">Morning Sarah! Of course, just send them over and I'll add them today. How's business been since your website redesign?</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">09:17</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client response */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">It's been incredible honestly. I've stopped chasing small repairs and now focus on full renovations that pay 3x better.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">09:20</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client continue */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">The gallery page you created really sells my work. Customers have already decided they want to hire me before we even speak.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">09:21</p>
-                      </div>
-                    </div>
-                    
-                    {/* Account manager response */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">That's exactly what we want to hear! Quality photos + professional website = premium clients. Let me know when you've sent the new photos.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">09:24</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Date footer */}
-                <div className="bg-white p-2 text-center text-xs text-gray-500">
-                  Messages from May 22, 2024 • Managed by Jack
-                </div>
-              </div>
-              
-              {/* Third WhatsApp chat */}
-              <div className="rounded-lg overflow-hidden shadow-md border border-gray-200">
-                {/* WhatsApp header */}
-                <div className="bg-[#128C7E] text-white p-3 flex items-center">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden mr-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/men/75.jpg" 
-                      alt="James" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">James Wilson</p>
-                    <p className="text-xs opacity-80">Builder, Birmingham</p>
-                  </div>
-                </div>
-                
-                {/* Chat area */}
-                <div className="bg-[#e5ded8] p-3 h-[320px] overflow-y-auto">
-                  <div className="flex flex-col space-y-3">
-                    {/* Account manager message */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">Hey James! I saw your website traffic doubled last month. How's that translating to business for you?</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">16:03</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client reply */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">It's been transformative Lisa. I hired my first employee last month!</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">16:20</p>
-                      </div>
-                    </div>
-                    
-                    {/* Account manager response */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">That's huge news! Congratulations 🎉 What made you decide to take that step?</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">16:22</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client continue */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">The consistent work coming in gave me the confidence to expand. I've got more projects than I can handle alone now.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">16:25</p>
-                      </div>
-                    </div>
-                    
-                    {/* Client additional */}
-                    <div className="flex justify-end">
-                      <div className="bg-[#dcf8c6] rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">I used to worry about where the next job would come from. Now I'm thinking about how to scale and maybe even open a showroom next year.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">16:26</p>
-                      </div>
-                    </div>
-                    
-                    {/* Account manager response */}
-                    <div className="flex">
-                      <div className="bg-white rounded-lg p-3 max-w-[80%] shadow-sm">
-                        <p className="text-gray-800">From solo builder to showroom owner - that's the journey we love to see! Let me know when you're ready and we can add a showroom page to your site.</p>
-                        <p className="text-xs text-gray-500 text-right mt-1">16:30</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Date footer */}
-                <div className="bg-white p-2 text-center text-xs text-gray-500">
-                  Messages from April 3, 2024 • Managed by Lisa
-                </div>
-              </div>
-            </div>
-          </div>
           
-          <div className="mt-8 text-center">
-            <p className="text-gray-600 mb-4">These are real conversations with our clients. See how we can transform your business too.</p>
-            <a 
-              href="https://wa.me/+447424163547" 
-              target="_blank"
-              rel="noopener noreferrer" 
-              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 inline-flex items-center space-x-2"
-            >
-              <WhatsAppIcon size={20} />
-              <span>Chat With Us About Your Website</span>
-            </a>
-          </div>
-        </div>
-      </section>
       
-      {/* Add this after the Benefits Section but before the Pricing Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Easy Website Management</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              No complicated logins or tech knowledge needed. Just message your account manager.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">Need Website Changes?</h3>
-              <p className="text-lg text-gray-700 mb-6">
-                Just WhatsApp your account manager with what you need. We handle all the technical work for you.
-              </p>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-                <h4 className="font-bold text-xl text-slate-800 mb-4">How It Works:</h4>
-                <ol className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">1</span>
-                    <div>
-                      <p className="text-gray-700">Message your account manager via WhatsApp</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">2</span>
-                    <div>
-                      <p className="text-gray-700">Tell us what changes you need</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">3</span>
-                    <div>
-                      <p className="text-gray-700">We'll make the updates for you</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#fd8f01] text-white font-bold mr-3">4</span>
-                    <div>
-                      <p className="text-gray-700">Changes live within 24 hours</p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-              
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="https://wa.me/+447424163547" 
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center space-x-2"
-                >
-                  <WhatsAppIcon size={20} />
-                  <span>Chat With Us</span>
-                </a>
-              </div>
-            </div>
-            
-            <div className="order-1 lg:order-2 relative">
-              <img 
-                src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Tradesperson messaging on phone" 
-                className="w-full rounded-lg shadow-lg"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs hidden md:block">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-green-100 rounded-full p-2">
-                    <WhatsAppIcon className="text-green-500" size={24} />
-                  </div>
-                  <div>
-                    <p className="text-gray-800 font-medium mb-1">Need to add new photos?</p>
-                    <p className="text-gray-600 text-sm">Just WhatsApp them to me and I'll add them to your gallery by tomorrow.</p>
-                    <p className="text-gray-500 text-xs mt-1">Your account manager</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      
-   
-
-      <div className="fixed bottom-0 left-0 right-0 bg-white p-3 shadow-lg z-50 md:hidden">
-        <div className="flex justify-between gap-2">
-          <a href="https://wa.me/+447424163547" target="_blank" rel="noopener noreferrer" 
-             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md flex items-center justify-center flex-1">
-            <WhatsAppIcon size={18} className="mr-1" />
-            <span>Chat</span>
-          </a>
-          <Link to="/get-started" 
-             className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-2 px-4 rounded-md flex items-center justify-center flex-1">
-            Start Now
-          </Link>
-        </div>
-      </div>
     </div>
   );
 };
