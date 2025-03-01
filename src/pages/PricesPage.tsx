@@ -51,7 +51,7 @@ const PricesPage = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Simple, Transparent Pricing</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Straightforward options designed specifically for tradespeople. No hidden costs, no surprises.
+              Every website is fully custom-built from the ground up with exactly what you want. No templates, no limitations.
             </p>
           </div>
           
@@ -162,18 +162,63 @@ const PricesPage = () => {
             </div>
           </div>
           
+          {/* Additional Costs Section */}
+          <div className="bg-gray-50 rounded-lg p-8 mb-16">
+            <h3 className="text-2xl font-bold text-slate-800 mb-6">Additional Costs</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold text-slate-700 mb-3">Hosting & Maintenance</h4>
+                <p className="text-gray-600 mb-4">
+                  All websites require ongoing hosting and maintenance to stay secure and up-to-date.
+                </p>
+                <div className="bg-white p-4 rounded-md shadow-sm border border-gray-100">
+                  <p className="text-slate-800 font-medium">£12.99/month or £129/year (save 17%)</p>
+                  <p className="text-sm text-gray-500 mt-1">Includes domain renewal, security updates, and basic SEO monitoring</p>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold text-slate-700 mb-3">Advanced Features</h4>
+                <p className="text-gray-600 mb-4">
+                  Additional features can be added to your custom website based on your specific needs.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
+                    <div>
+                      <span className="text-slate-700 font-medium">Quote engine integration</span>
+                      <p className="text-sm text-gray-500">Price agreed upon consultation</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
+                    <div>
+                      <span className="text-slate-700 font-medium">Custom software integrations</span>
+                      <p className="text-sm text-gray-500">Price agreed upon consultation</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
+                    <div>
+                      <span className="text-slate-700 font-medium">E-commerce functionality</span>
+                      <p className="text-sm text-gray-500">Starting at £299</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           
-      {/* Pricing Section */}
-      
           {/* Custom Upgrades Section - moved from ServicesPage */}
           <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 mb-16">
             <div className="bg-slate-800 text-white p-6">
               <div className="flex items-center mb-4">
                 <Wrench size={32} className="text-[#fd8f01] mr-3" />
-                <h3 className="text-2xl font-bold">Custom Upgrades - Just Ask</h3>
+                <h3 className="text-2xl font-bold">Fully Custom Built - Your Vision, Your Website</h3>
               </div>
               <p className="text-lg text-gray-300">
-                Got an idea for your website? Need something special? Just ask your account manager.
+                Every website is built from the ground up based on your exact needs. No templates, no restrictions.
               </p>
             </div>
             
@@ -184,9 +229,9 @@ const PricesPage = () => {
                     <WhatsAppIcon className="text-green-600" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Send a WhatsApp</h4>
+                    <h4 className="font-bold text-slate-800 mb-1">Simple Communication</h4>
                     <p className="text-gray-600">
-                      Just snap some photos or describe what you need. No technical explanation required.
+                      Just describe what you need in plain English. No technical knowledge required.
                     </p>
                   </div>
                 </div>
@@ -198,7 +243,7 @@ const PricesPage = () => {
                   <div>
                     <h4 className="font-bold text-slate-800 mb-1">Builder to Builder</h4>
                     <p className="text-gray-600">
-                      We'll talk through your idea in plain English - no tech jargon or upselling.
+                      We'll talk through your needs in plain English - no tech jargon or upselling.
                     </p>
                   </div>
                 </div>
@@ -208,9 +253,9 @@ const PricesPage = () => {
                     <Check className="text-blue-600" size={20} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-800 mb-1">Straightforward Quote</h4>
+                    <h4 className="font-bold text-slate-800 mb-1">Straightforward Pricing</h4>
                     <p className="text-gray-600">
-                      Get a clear price for your idea with no hidden costs or surprises.
+                      Get a clear price for your custom features with no hidden costs or surprises.
                     </p>
                   </div>
                 </div>
@@ -230,7 +275,7 @@ const PricesPage = () => {
               
               <div className="border-t border-gray-200 pt-6 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-4">
                 <p className="text-gray-700 font-medium mb-4 sm:mb-0">
-                  What could make your life easier on site? Let's make it happen.
+                  Have something specific in mind? Advanced features like quote engines and custom integrations are available by agreement.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link 
@@ -276,6 +321,13 @@ const PricesPage = () => {
                   We recommend using your own project photos when possible as they showcase your actual work. However, we can provide stock images to complement your content if needed.
                 </p>
               </div>
+              
+              <div>
+                <h4 className="text-lg font-semibold text-slate-700 mb-2">Can I request custom features not listed here?</h4>
+                <p className="text-gray-600">
+                  Absolutely! Our websites are fully custom-built from the ground up. If you need specific features like quote engines or custom software integrations, just mention them in your questionnaire and we'll discuss options and pricing.
+                </p>
+              </div>
             </div>
           </div>
           
@@ -283,7 +335,7 @@ const PricesPage = () => {
           <div className="bg-slate-800 rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to boost your trade business online?</h3>
             <p className="text-gray-300 mb-8 max-w-3xl mx-auto">
-              Fill out our quick questionnaire to get started. We'll match you with the perfect website package for your trade business.
+              Fill out our quick questionnaire to get started. We'll build you a custom website tailored exactly to your trade business needs.
             </p>
             <Link 
               to="/get-started" 

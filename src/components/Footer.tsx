@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">GetTradesOnline</h3>
             <p className="text-gray-400 mb-4">
-              Websites for builders and tradespeople in 48-72 hours. Founded by an ex-builder who understands your business.
+              We build professional websites for builders and tradespeople with a 48-hour turnaround. Founded by Tom, a former carpenter from the South West who understands the trades industry firsthand.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-[#fd8f01]">

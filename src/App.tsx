@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -14,11 +14,14 @@ import ScrollToTop from './components/ScrollToTop';
 import PricesPage from './pages/PricesPage';
 
 const App = () => {
+  const location = useLocation();
+  const isQuestionnairePage = location.pathname === '/get-started';
+  
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Navbar />
-      <main className="flex-grow">
+      {!isQuestionnairePage && <Navbar />}
+      <main className={`flex-grow ${isQuestionnairePage ? 'bg-gray-50' : ''}`}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -31,7 +34,7 @@ const App = () => {
           <Route path="/prices" element={<PricesPage />} />
         </Routes>
       </main>
-      <Footer />
+      {!isQuestionnairePage && <Footer />}
     </div>
   );
 };

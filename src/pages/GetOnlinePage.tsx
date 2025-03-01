@@ -10,9 +10,9 @@ const GetOnlinePage = () => {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">Websites For Builders. No Tech Headaches.</h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
-              Get online in 48 hours. One payment, we handle everything.
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">Websites For Trades. <span className="text-[#fd8f01]">No Tech Headaches.</span></h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+              Get online in <span className="font-semibold">72 hours</span>. Fill out our quick questionnaire, chat with your personal account manager via WhatsApp. <span className="text-[#fd8f01] font-medium">One payment, we handle everything.</span>
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
@@ -45,6 +45,115 @@ const GetOnlinePage = () => {
               <div>
                 <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">3.2x</h3>
                 <p className="text-sm">more leads with a website</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Tradesperson Well-being Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">A Website Isn't Just About Leads. It's About Your Life.</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              When you're on the tools every day, a website should make your life easier, not add stress. Here's how it actually helps.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Financial Stability Card */}
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+              <div className="flex items-start mb-4">
+                <div className="bg-[#fff5e6] p-2 rounded-full mr-4">
+                  <Check className="text-[#fd8f01]" size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800">Charge What You're Worth</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                With consistent leads, you can confidently raise your prices without fear of losing work. No more undercutting yourself just to keep busy.
+              </p>
+              <div className="mt-4 p-3 bg-slate-50 rounded-md">
+                <p className="text-sm text-slate-700 italic">
+                  "Since my website went live, I've increased my rates by 25% and still have more work than I can handle."
+                </p>
+              </div>
+            </div>
+            
+            {/* Work-Life Balance Card */}
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+              <div className="flex items-start mb-4">
+                <div className="bg-[#fff5e6] p-2 rounded-full mr-4">
+                  <Check className="text-[#fd8f01]" size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800">Get Your Weekends Back</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Choose better-paying jobs and clients, giving you more time with family while making more money. Your website filters out time-wasters.
+              </p>
+              <div className="mt-4 p-3 bg-slate-50 rounded-md">
+                <p className="text-sm text-slate-700 italic">
+                  "I used to work 7 days a week. Now I take weekends off with my kids and still make more than before."
+                </p>
+              </div>
+            </div>
+            
+            {/* Escape the Hustle Card */}
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+              <div className="flex items-start mb-4">
+                <div className="bg-[#fff5e6] p-2 rounded-full mr-4">
+                  <Check className="text-[#fd8f01]" size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800">End the Constant Hustle</h3>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Replace exhausting quote-after-quote cycles with quality leads who already trust you before calling. Your portfolio does the selling for you.
+              </p>
+              <div className="mt-4 p-3 bg-slate-50 rounded-md">
+                <p className="text-sm text-slate-700 italic">
+                  "I've stopped stressing about where the next job is coming from. Clients now approach me already wanting to work with me."
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 bg-slate-50 p-6 rounded-lg">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">Build Real Wealth, Not Just Income</h3>
+                <p className="text-gray-700 mb-4">
+                  Shift from a "need the next job" mindset to confidently growing a business that builds lasting wealth. A professional website helps you:
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Set up automated invoicing systems that reduce late payment stress</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Pre-qualify leads so you only quote for serious, well-funded projects</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span>Build trust through testimonials and portfolio before you even speak to clients</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="md:w-1/3 mt-6 md:mt-0">
+                <div className="bg-white p-5 rounded-lg shadow-md">
+                  <h4 className="font-bold text-slate-800 mb-3 text-center">What about the cost?</h4>
+                  <p className="text-gray-600 mb-4 text-center">
+                    Our one-time payment model means no ongoing financial stress - unlike monthly subscription services that drain your profits year after year.
+                  </p>
+                  <div className="flex justify-center">
+                    <Link 
+                      to="/get-started" 
+                      className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-2 px-4 rounded-md transition duration-300 text-center"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -399,6 +508,28 @@ const GetOnlinePage = () => {
             </div>
           </div>
           
+      {/* Statistics Banner */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-800 text-white rounded-lg p-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+              <div>
+                <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">87%</h3>
+                <p className="text-sm">of customers check a tradesperson's website</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">64%</h3>
+                <p className="text-sm">won't consider trades without a website</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-[#fd8f01] mb-1">3.2x</h3>
+                <p className="text-sm">more leads with a website</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
           {/* Add a section comparing our pricing to competitors */}
           <div className="max-w-4xl mx-auto mt-12 bg-gray-50 rounded-lg p-6 shadow">
             <h3 className="text-2xl font-bold text-slate-800 mb-4">The Truth About Website Pricing</h3>
@@ -484,6 +615,8 @@ const GetOnlinePage = () => {
           </div>
         </div>
       </section>
+
+      
           {/* Additional Benefits Section */}
           <div className="mt-12 bg-slate-50 rounded-lg p-8 shadow-md">
             <h3 className="text-2xl font-bold mb-6 text-center text-slate-800">The Real-Life Impact Our Clients See</h3>

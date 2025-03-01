@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, Clock, Hammer } from 'lucide-react';
+import { CheckCircle2, Clock } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const ThankYouPage = () => {
@@ -100,23 +100,6 @@ const ThankYouPage = () => {
             >
               Back to Services
             </Link>
-          </div>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-sm p-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-            <div className="flex items-center">
-              <Hammer className="text-[#fd8f01] mr-2" size={20} />
-              <span className="font-medium">Built by an ex-builder</span>
-            </div>
-            <div className="flex items-center">
-              <Clock className="text-[#fd8f01] mr-2" size={20} />
-              <span className="font-medium">48-hour delivery</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle2 className="text-[#fd8f01] mr-2" size={20} />
-              <span className="font-medium">Pay once, then we handle everything</span>
-            </div>
           </div>
         </div>
       </div>
