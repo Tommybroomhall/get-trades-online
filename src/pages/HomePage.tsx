@@ -84,8 +84,7 @@ const HomePage = () => {
               <div className="flex flex-wrap gap-4">
                 <Link 
                   to="/get-started" 
-                  className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-4 px-10 rounded-md transition duration-300 transform hover:scale-105 shadow-lg text-lg md:text-xl relative overflow-hidden group animate-pulse"
-                  style={{ animation: 'pulse 2s infinite' }}
+                  className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-4 px-10 rounded-md transition duration-300 transform hover:scale-105 shadow-lg text-lg md:text-xl relative overflow-hidden group"
                 >
                   <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Get Started</span>
                   <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -184,7 +183,7 @@ const HomePage = () => {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4" style={{ fontSize: 'calc(2rem + 1px)' }}>Your Personal Website Team, On WhatsApp</h2>
               <p className="text-xl text-gray-600 mb-6">
-                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Complete our questionnaire to get started</span>, then work with your personal account manager via <span className="text-[#25D366] font-bold">WhatsApp</span>. Need a change? <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Our streamlined process makes it easy</span>. We'll keep you updated at every step and have your site ready within <strong style={{ fontSize: 'calc(1.25rem + 1px)' }}>72 hours</strong>.
+                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Complete our questionnaire to get started</span>, then work with your personal account manager via <span className="text-[#25D366] font-bold">WhatsApp</span>. Need a change? <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Just send a quick message</span>. All website updates are handled with a simple text - no complicated forms or technical knowledge needed. We'll keep you updated at every step and have your site ready within <strong style={{ fontSize: 'calc(1.25rem + 1px)' }}>72 hours</strong>.
               </p>
               
               <div className="bg-gray-50 p-5 rounded-lg mb-8">
@@ -199,7 +198,7 @@ const HomePage = () => {
                   </li>
                   <li className="flex items-start">
                     <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
-                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Submit change requests and get help directly from your account manager</span>
+                    <span style={{ fontSize: 'calc(1rem + 1px)' }}>Make changes with just a quick message - no complicated forms</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
@@ -215,12 +214,220 @@ const HomePage = () => {
               
             </div>
             
-            <div className="order-1 lg:order-2">
-              <img 
-                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740799513/low-view-carpenter-worker_j74iwc.jpg" 
-                alt="Tradesperson using digital tablet at construction site" 
-                className="w-full h-auto rounded-lg shadow-md"
-              />
+            <div className="order-1 lg:order-2 relative">
+              <div className="w-full h-full bg-gray-50 rounded-lg shadow-md p-6 border border-gray-300" 
+                style={{
+                  backgroundImage: `url('https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740877163/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21_x3ed31.png')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
+                {/* WhatsApp inspired header */}
+                <div className="bg-[#25D366] text-white p-3 rounded-t-lg -mt-6 -mx-6 mb-4 flex items-center shadow-md">
+                  <WhatsAppIcon className="mr-2" size={24} />
+                  <div>
+                    <h3 className="font-bold">Your Personal Website Team</h3>
+                    <p className="text-xs text-white text-opacity-90">Online now - Message anytime</p>
+                  </div>
+                </div>
+                
+                <h3 className="text-center text-xl font-bold text-slate-800 mb-4 bg-white bg-opacity-80 py-2 rounded-lg">See How Easy It Is To Update Your Website</h3>
+                
+                {/* Chat conversation */}
+                <div className="flex flex-col gap-4">
+                  {/* First chat bubble - tradesperson request */}
+                  <div 
+                    className="bg-white p-4 rounded-lg shadow-lg max-w-xs self-end transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    style={{ 
+                      animationName: 'slideInRight',
+                      animationDuration: '0.5s',
+                      animationTimingFunction: 'ease-out',
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-2">JB</div>
+                      <div>
+                        <p className="font-bold text-sm">John Builder</p>
+                        <p className="text-xs text-gray-500">Today, 10:15 AM</p>
+                      </div>
+                    </div>
+                    <p className="text-sm mb-2">Hi, I'd like to add a new kitchen renovation service to my website. Can you help me with that?</p>
+                  </div>
+                  
+                  {/* Second chat bubble - response */}
+                  <div 
+                    className="bg-green-50 p-4 rounded-lg shadow-lg max-w-xs self-start transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    style={{ 
+                      animationName: 'slideInRight',
+                      animationDuration: '0.5s',
+                      animationTimingFunction: 'ease-out',
+                      animationDelay: '0.7s',
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 rounded-full mr-2 overflow-hidden">
+                        <img 
+                          src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740875969/436498359_122096960582290069_3053565152688399100_n_yzsbey.jpg" 
+                          alt="Get Trades Online WhatsApp profile" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-bold text-sm">Get Trades Online</p>
+                        <p className="text-xs text-gray-500">Today, 10:18 AM</p>
+                      </div>
+                    </div>
+                    <p className="text-sm mb-2">Great idea, John! We've researched kitchen renovation services in your area and attached some price guides so you don't underquote. We'll have the changes live within 24 hours.</p>
+                    <div className="bg-white p-2 rounded text-xs flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                      </svg>
+                      <span>Kitchen_Pricing_Guide.pdf</span>
+                    </div>
+                  </div>
+
+                  {/* Third chat bubble - builder response */}
+                  <div 
+                    className="bg-white p-4 rounded-lg shadow-lg max-w-xs self-end transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    style={{ 
+                      animationName: 'slideInRight',
+                      animationDuration: '0.5s',
+                      animationTimingFunction: 'ease-out',
+                      animationDelay: '1.4s',
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-2">JB</div>
+                      <div>
+                        <p className="font-bold text-sm">John Builder</p>
+                        <p className="text-xs text-gray-500">Today, 10:25 AM</p>
+                      </div>
+                    </div>
+                    <p className="text-sm mb-2">That's fantastic! Here are some photos of our latest kitchen project - could you add these to the new section?</p>
+                  </div>
+
+                  {/* Image message from builder - now with multiple images */}
+                  <div 
+                    className="bg-white p-4 rounded-lg shadow-lg max-w-xs self-end transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    style={{ 
+                      animationName: 'slideInRight',
+                      animationDuration: '0.5s',
+                      animationTimingFunction: 'ease-out',
+                      animationDelay: '1.9s',
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-2">JB</div>
+                      <div>
+                        <p className="font-bold text-sm">John Builder</p>
+                        <p className="text-xs text-gray-500">Today, 10:26 AM</p>
+                      </div>
+                    </div>
+                    
+                    {/* Gallery-style layout for multiple images */}
+                    <div className="space-y-1">
+                      {/* Main larger image */}
+                      <div className="rounded-lg overflow-hidden">
+                        <img 
+                          src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740878505/620f901a2f6b3-1645187098_tevmye.jpg" 
+                          alt="Kitchen renovation main view" 
+                          className="w-full h-auto"
+                        />
+                      </div>
+                      
+                      {/* Row of smaller images */}
+                      <div className="flex space-x-1">
+                        <div className="rounded-lg overflow-hidden w-1/2">
+                          <img 
+                            src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740878526/620f901b95c6e-1645187099_oibuu9.jpg" 
+                            alt="Kitchen renovation detail 1" 
+                            className="w-full h-auto"
+                          />
+                        </div>
+                        <div className="rounded-lg overflow-hidden w-1/2">
+                          <img 
+                            src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740878527/620f901b0d497-1645187099_gketab.jpg" 
+                            alt="Kitchen renovation detail 2" 
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Fourth chat bubble - GTO response */}
+                  <div 
+                    className="bg-green-50 p-4 rounded-lg shadow-lg max-w-xs self-start transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    style={{ 
+                      animationName: 'slideInRight',
+                      animationDuration: '0.5s',
+                      animationTimingFunction: 'ease-out',
+                      animationDelay: '2.4s',
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 rounded-full mr-2 overflow-hidden">
+                        <img 
+                          src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740875969/436498359_122096960582290069_3053565152688399100_n_yzsbey.jpg" 
+                          alt="Get Trades Online WhatsApp profile" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="font-bold text-sm">Get Trades Online</p>
+                        <p className="text-xs text-gray-500">Today, 10:40 AM</p>
+                      </div>
+                    </div>
+                    <p className="text-sm mb-2">Perfect! I've updated your website with the new kitchen renovation service and added those photos to the gallery. The changes are now live. Take a look and let me know what you think!</p>
+                    <div className="bg-white p-2 rounded text-xs flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-500 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" />
+                      </svg>
+                      <span className="text-blue-500">https://johnbuilder.co.uk</span>
+                    </div>
+                  </div>
+
+                  {/* Final thank you message */}
+                  <div 
+                    className="bg-white p-4 rounded-lg shadow-lg max-w-xs self-end transform transition-transform duration-500 ease-in-out hover:scale-105"
+                    style={{ 
+                      animationName: 'slideInRight',
+                      animationDuration: '0.5s',
+                      animationTimingFunction: 'ease-out',
+                      animationDelay: '2.9s',
+                      animationFillMode: 'both'
+                    }}
+                  >
+                    <div className="flex items-center mb-2">
+                      <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mr-2">JB</div>
+                      <div>
+                        <p className="font-bold text-sm">John Builder</p>
+                        <p className="text-xs text-gray-500">Today, 10:45 AM</p>
+                      </div>
+                    </div>
+                    <p className="text-sm mb-2">Wow, that was quick! The new section looks amazing. Thank you so much for your help!</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Add animation keyframes */}
+              <style>{`
+                @keyframes slideInRight {
+                  0% { 
+                    opacity: 0;
+                    transform: translateX(40px);
+                  }
+                  100% { 
+                    opacity: 1;
+                    transform: translateX(0);
+                  }
+                }
+              `}</style>
             </div>
           </div>
         </div>

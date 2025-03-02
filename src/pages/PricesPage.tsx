@@ -68,7 +68,7 @@ const PricesPage = () => {
             <div className="bg-white p-8 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-800">Essential Trade Website</h3>
+                  <h3 className="text-2xl font-bold text-slate-800">The Apprentice</h3>
                   <p className="text-gray-600 mt-1">For trade businesses 0-2 years old or just wanting a basic web presence</p>
                 </div>
                 <div className="text-right">
@@ -139,7 +139,7 @@ const PricesPage = () => {
               </div>
               
               <div className="space-y-4 mb-8">
-                <h4 className="font-semibold text-gray-300">Everything in Essential, plus:</h4>
+                <h4 className="font-semibold text-gray-300">Everything in The Apprentice, plus:</h4>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <Check className="text-green-400 mt-1 mr-2 flex-shrink-0" size={18} />
