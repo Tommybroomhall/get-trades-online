@@ -69,7 +69,7 @@ const PricesPage = () => {
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h3 className="text-2xl font-bold text-slate-800">Essential Trade Website</h3>
-                  <p className="text-gray-600 mt-1">Perfect for getting started online</p>
+                  <p className="text-gray-600 mt-1">For trade businesses 0-2 years old or just wanting a basic web presence</p>
                 </div>
                 <div className="text-right">
                   <p className="text-3xl font-bold text-slate-800">£499</p>
@@ -100,6 +100,14 @@ const PricesPage = () => {
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
                     <span className="text-gray-700">Photo gallery for your work</span>
                   </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">Full in-depth analysis</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span className="text-gray-700">Free logo design service</span>
+                  </li>
                 </ul>
               </div>
               
@@ -120,8 +128,9 @@ const PricesPage = () => {
               </div>
               <div className="flex justify-between items-start mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Complete Trade Website</h3>
-                  <p className="text-gray-300 mt-1">Full package for serious tradespeople</p>
+                  <h3 className="text-2xl font-bold text-white">Completely Flat Out Package</h3>
+                  <p className="text-gray-300 mt-1">For trades ready to go all-in and dominate their local market</p>
+                  <p className="text-gray-300 mt-2 text-sm">A website that evolves with your business - never truly finished, always improving</p>
                 </div>
                 <div className="text-right">
                   <p className="text-3xl font-bold text-white">£799</p>
@@ -142,6 +151,10 @@ const PricesPage = () => {
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-400 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span className="text-gray-300">Listing on additional trade platforms & directories</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-400 mt-1 mr-2 flex-shrink-0" size={18} />
                     <span className="text-gray-300">Customer testimonial section</span>
                   </li>
                   <li className="flex items-start">
@@ -151,6 +164,14 @@ const PricesPage = () => {
                   <li className="flex items-start">
                     <Check className="text-green-400 mt-1 mr-2 flex-shrink-0" size={18} />
                     <span className="text-gray-300">Enhanced photo/video galleries</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-400 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span className="text-gray-300">Focus on perfection with ongoing refinements</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="text-green-400 mt-1 mr-2 flex-shrink-0" size={18} />
+                    <span className="text-gray-300">Monthly check-ins to optimize performance</span>
                   </li>
                 </ul>
               </div>
