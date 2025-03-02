@@ -183,7 +183,7 @@ const HomePage = () => {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4" style={{ fontSize: 'calc(2rem + 1px)' }}>Your Personal Website Team, On WhatsApp</h2>
               <p className="text-xl text-gray-600 mb-6">
-                <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Complete our questionnaire to get started</span>, then work with your personal account manager via <span className="text-[#25D366] font-bold">WhatsApp</span>. Need a change? <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Just send a quick message</span>. All website updates are handled with a simple text - no complicated forms or technical knowledge needed. We'll keep you updated at every step and have your site ready within <strong style={{ fontSize: 'calc(1.25rem + 1px)' }}>72 hours</strong>.
+               <span className="text-[#25D366] font-bold">WhatsApp</span>. Need a change? <span style={{ fontSize: 'calc(1.25rem + 1px)' }}>Just send a quick message</span>. All website updates are handled with a simple text - no complicated forms or technical knowledge needed. We'll keep you updated at every step and have your site ready within <strong style={{ fontSize: 'calc(1.25rem + 1px)' }}>72 hours</strong>.
               </p>
               
               <div className="bg-gray-50 p-5 rounded-lg mb-8">
