@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Hammer, Calendar, CheckCircle, Clock, ArrowRight, Star, ExternalLink, Construction } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import Lottie from 'react-lottie-player';
+import constructionAnimation from '../assets/construction-animation.json';
 
 // Project type definitions
 interface BaseProject {
@@ -48,7 +50,7 @@ const PortfolioPage = () => {
       image: "https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740850892/481044673_2232268817228929_4486988628446735392_n_giivtf.jpg",
       logoImage: "https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740851021/451430775_793872029400696_77012643611861594_n_imbyya.jpg",
       websiteUrl: "https://johnsonplumbing.co.uk",
-      completionDate: "15 May 2023",
+      completionDate: "27 February 2025",
       reviews: [
         {
           text: "Since launching my website, I've been able to charge premium rates and still stay booked solid. Now I work fewer hours but make more money.",
@@ -65,7 +67,7 @@ const PortfolioPage = () => {
       image: "https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740940143/Untitled_1400_x_900_px_1_plhnyz.png",
       logoImage: "https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740851642/249182591_601724691263411_6691079301606056254_n_xftz5u.jpg",
       websiteUrl: "https://customwoodworx.co.uk",
-      completionDate: "3 June 2023",
+      completionDate: "22 February 2025",
       reviews: [
         {
           text: "I had no idea how much work I was missing until I got my website. The quality of inquiries is much higher, and clients come to me already knowing what we can do.",
@@ -82,7 +84,7 @@ const PortfolioPage = () => {
       image: "https://res.cloudinary.com/dbmj7rhwt/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1740854868/unnamed_xf4gml.webp",
       logoImage: "https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740854868/unnamed_1_rjt2va.webp",
       websiteUrl: "https://cheshirepaintingdecorating.co.uk",
-      completionDate: "28 July 2023",
+      completionDate: "18 February 2025",
       reviews: [
         {
           text: "Get Trades Online got me up and running in no time. I was shocked at how easy it is to manage the website. It looks so professional and has already brought in several high-end clients.",
@@ -102,9 +104,9 @@ const PortfolioPage = () => {
       description: "Building a professional website with emergency callout features, service area maps, and certifications display.",
       image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       logoImage: "https://placehold.co/100x100/orange/white?text=SE",
-      startDate: "12 June 2023",
+      startDate: "1 March 2025",
       progress: 75,
-      estimatedCompletion: "3 July 2023",
+      estimatedCompletion: "4 March 2025",
       currentPhase: "Content Implementation"
     },
     {
@@ -113,9 +115,9 @@ const PortfolioPage = () => {
       businessType: "Roofing Contractor",
       description: "Developing a complete roofing service website with before/after gallery, emergency repair information, and free quote functionality.",
       image: "https://images.unsplash.com/photo-1588012886079-6c2a6f692e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      startDate: "20 June 2023",
+      startDate: "28 February 2025",
       progress: 40,
-      estimatedCompletion: "10 July 2023",
+      estimatedCompletion: "3 March 2025",
       currentPhase: "Design Approval"
     }
   ];
@@ -129,7 +131,7 @@ const PortfolioPage = () => {
       description: "Creating a portfolio-focused website with season-specific services, maintenance plans, and interactive project galleries.",
       image: "https://images.unsplash.com/photo-1599629954294-14df9f8291bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       queuePosition: 1,
-      estimatedStartDate: "8 July 2023",
+      estimatedStartDate: "5 March 2025",
       clientName: "Mark Jones",
       clientLocation: "Manchester"
     },
@@ -140,7 +142,7 @@ const PortfolioPage = () => {
       description: "Building a comprehensive service website with detailed bathroom renovation portfolio, free consultations, and pricing guides.",
       image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       queuePosition: 2,
-      estimatedStartDate: "15 July 2023",
+      estimatedStartDate: "8 March 2025",
       clientName: "Steve Williams",
       clientLocation: "Birmingham"
     },
@@ -151,7 +153,7 @@ const PortfolioPage = () => {
       description: "Creating a service-focused website with emergency repair information, maintenance plans, and seasonal special offers.",
       image: "https://images.unsplash.com/photo-1613323593608-abc90fea564f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       queuePosition: 3,
-      estimatedStartDate: "22 July 2023",
+      estimatedStartDate: "11 March 2025",
       clientName: "Alan Reynolds",
       clientLocation: "Sheffield"
     }
@@ -209,92 +211,208 @@ const PortfolioPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {completedProjects.map(project => (
-              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105 flex flex-col">
-                <div className="relative h-56 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-0 right-0 m-4">
-                    <div className="bg-white p-1 rounded-full overflow-hidden shadow-md h-10 w-10 flex items-center justify-center">
-                      {project.logoImage && (
-                        <img 
-                          src={project.logoImage} 
-                          alt={`${project.title} logo`}
-                          className="w-8 h-8 object-contain"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                    <div className="flex items-center">
-                      <div className="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium flex items-center">
-                        <CheckCircle size={12} className="mr-1" />
-                        Completed
+              project.id === "custom-woodworx" ? (
+                /* Custom card for CustomWoodworx */
+                <div key={project.id} className="col-span-1 lg:col-span-2 bg-gradient-to-tr from-[#1B2637] to-[#2d3b50] rounded-lg shadow-lg overflow-hidden border border-[#fd8f01] transition-transform hover:transform hover:scale-102 flex flex-col md:flex-row">
+                  <div className="md:w-1/2 relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-0 right-0 m-4">
+                      <div className="bg-white p-1 rounded-full overflow-hidden shadow-md h-12 w-12 flex items-center justify-center">
+                        {project.logoImage && (
+                          <img 
+                            src={project.logoImage} 
+                            alt={`${project.title} logo`}
+                            className="w-10 h-10 object-contain"
+                          />
+                        )}
                       </div>
-                      <span className="text-white text-sm ml-2">{project.completionDate}</span>
                     </div>
-                  </div>
-                </div>
-                
-                <div className="p-6 flex-grow">
-                  <h3 className="font-bold text-xl text-slate-800 mb-1">{project.title}</h3>
-                  <p className="text-[#fd8f01] text-sm font-medium mb-3">{project.businessType}</p>
-                  <p className="text-gray-700 mb-4">{project.description}</p>
-                  
-                  {/* Reviews section */}
-                  {project.reviews.length > 0 && (
-                    <div className="bg-gray-50 p-4 rounded-md mb-4">
-                      <div className="flex items-center mb-2">
-                        <div className="flex mr-2">
-                          {renderStars(project.reviews[0].rating)}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1B2637] to-transparent p-4">
+                      <div className="flex items-center">
+                        <div className="bg-[#fd8f01] text-white text-xs px-3 py-1 rounded-full font-bold flex items-center">
+                          <Star size={12} className="mr-1" />
+                          Featured Project
                         </div>
-                        <span className="text-sm text-gray-500">Client Review</span>
                       </div>
-                      <p className="text-gray-700 italic text-sm mb-2">"{project.reviews[0].text}"</p>
-                      <p className="text-gray-600 text-sm font-medium">- {project.reviews[0].author}</p>
                     </div>
-                  )}
+                  </div>
+                  
+                  <div className="md:w-1/2 p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <h3 className="font-bold text-2xl text-white mb-1">{project.title}</h3>
+                          <p className="text-[#fd8f01] text-sm font-medium">{project.businessType}</p>
+                        </div>
+                        <span className="text-gray-300 text-sm">Completed {project.completionDate}</span>
+                      </div>
+                      <p className="text-gray-300 mb-4">{project.description}</p>
+                      
+                      {/* Additional feature highlights */}
+                      <div className="mb-4">
+                        <h4 className="text-white font-medium mb-2">Special Features:</h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start">
+                            <CheckCircle size={16} className="text-[#fd8f01] mt-0.5 mr-2 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm">Custom portfolio showcasing</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle size={16} className="text-[#fd8f01] mt-0.5 mr-2 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm">Personalized "links" page like Linktree</span>
+                          </li>
+                          <li className="flex items-start">
+                            <CheckCircle size={16} className="text-[#fd8f01] mt-0.5 mr-2 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm">Mobile-optimized gallery</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    {/* Reviews section */}
+                    {project.reviews.length > 0 && (
+                      <div className="bg-[#2d3b50] p-4 rounded-md mb-4">
+                        <div className="flex items-center mb-2">
+                          <div className="flex mr-2">
+                            {renderStars(project.reviews[0].rating)}
+                          </div>
+                          <span className="text-sm text-gray-400">Client Testimonial</span>
+                        </div>
+                        <p className="text-white italic text-sm mb-2">"{project.reviews[0].text}"</p>
+                        <p className="text-gray-400 text-sm font-medium">- {project.reviews[0].author}</p>
+                      </div>
+                    )}
+                    
+                    <div className="flex space-x-3 mt-2">
+                      <a 
+                        href={project.websiteUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center text-white bg-[#fd8f01] hover:bg-[#e68101] px-3 py-2 rounded-md font-medium transition-colors text-sm"
+                      >
+                        Visit Website <ExternalLink size={14} className="ml-2" />
+                      </a>
+                      <a 
+                        href={`${project.websiteUrl}/links`} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="inline-flex items-center text-[#fd8f01] border border-[#fd8f01] hover:bg-[#fd8f01] hover:text-white px-3 py-2 rounded-md font-medium transition-colors text-sm"
+                      >
+                        See Links Page <ExternalLink size={14} className="ml-2" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                
-                <div className="p-4 border-t border-gray-200 bg-gray-50">
-                  <a 
-                    href={project.websiteUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="inline-flex items-center text-slate-800 font-medium hover:text-[#fd8f01] transition-colors"
-                  >
-                    Visit Website <ExternalLink size={16} className="ml-2" />
-                  </a>
+              ) : (
+                /* Standard card for other projects */
+                <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform hover:transform hover:scale-105 flex flex-col">
+                  <div className="relative h-56 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-0 right-0 m-4">
+                      <div className="bg-white p-1 rounded-full overflow-hidden shadow-md h-10 w-10 flex items-center justify-center">
+                        {project.logoImage && (
+                          <img 
+                            src={project.logoImage} 
+                            alt={`${project.title} logo`}
+                            className="w-8 h-8 object-contain"
+                          />
+                        )}
+                      </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                      <div className="flex items-center">
+                        <div className="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-medium flex items-center">
+                          <CheckCircle size={12} className="mr-1" />
+                          Completed
+                        </div>
+                        <span className="text-white text-sm ml-2">{project.completionDate}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6 flex-grow">
+                    <h3 className="font-bold text-xl text-slate-800 mb-1">{project.title}</h3>
+                    <p className="text-[#fd8f01] text-sm font-medium mb-3">{project.businessType}</p>
+                    <p className="text-gray-700 mb-4">{project.description}</p>
+                    
+                    {/* Reviews section */}
+                    {project.reviews.length > 0 && (
+                      <div className="bg-gray-50 p-4 rounded-md mb-4">
+                        <div className="flex items-center mb-2">
+                          <div className="flex mr-2">
+                            {renderStars(project.reviews[0].rating)}
+                          </div>
+                          <span className="text-sm text-gray-500">Client Review</span>
+                        </div>
+                        <p className="text-gray-700 italic text-sm mb-2">"{project.reviews[0].text}"</p>
+                        <p className="text-gray-600 text-sm font-medium">- {project.reviews[0].author}</p>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="p-4 border-t border-gray-200 bg-gray-50">
+                    <a 
+                      href={project.websiteUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center text-slate-800 font-medium hover:text-[#fd8f01] transition-colors"
+                    >
+                      Visit Website <ExternalLink size={16} className="ml-2" />
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )
             ))}
           </div>
         </div>
       </section>
       
       {/* In Progress Projects Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#1B2637]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center mb-10">
-            <div className="bg-[#fff5e6] p-3 rounded-full mr-4">
-              <Construction className="h-8 w-8 text-[#fd8f01]" />
+            <div className="bg-[#fd8f01] p-3 rounded-full mr-4">
+              <Construction className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-slate-800">In Progress</h2>
-              <p className="text-gray-600">Websites currently being built for our clients</p>
+              <h2 className="text-3xl font-bold text-white">In Progress</h2>
+              <p className="text-gray-300">Websites currently being built for our clients</p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center mb-8">
+            <div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
+              <Lottie
+                loop
+                animationData={constructionAnimation}
+                play
+                style={{ width: 250, height: 250 }}
+              />
+            </div>
+            <div className="md:w-2/3">
+              <p className="text-white text-lg mb-4">
+                Our team is currently working on these projects in real-time. From initial design to final launch, we build custom websites in just <span className="font-bold text-[#fd8f01]">3 days</span>. 
+                Watch our progress as we transform ideas into standout websites.
+              </p>
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {inProgressProjects.map(project => (
-              <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+              <div key={project.id} className="bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-slate-700">
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="font-bold text-xl text-slate-800 mb-1">{project.title}</h3>
+                      <h3 className="font-bold text-xl text-white mb-1">{project.title}</h3>
                       <p className="text-[#fd8f01] text-sm font-medium mb-1">{project.businessType}</p>
                     </div>
                     <div className="bg-[#fd8f01] text-white text-sm px-3 py-1 rounded-full font-medium flex items-center shadow-md">
@@ -303,34 +421,34 @@ const PortfolioPage = () => {
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 mb-4">{project.description}</p>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
                   
                   <div className="mb-5">
                     <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium text-gray-700">Progress: {project.progress}%</span>
-                      <span className="text-sm font-medium text-gray-700">Est. Completion: {project.estimatedCompletion}</span>
+                      <span className="text-sm font-medium text-gray-300">Progress: {project.progress}%</span>
+                      <span className="text-sm font-medium text-gray-300">Est. Completion: {project.estimatedCompletion}</span>
                     </div>
                     {renderProgressBar(project.progress)}
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
                     <div className="flex items-center">
-                      <div className="bg-gray-100 p-2 rounded-full mr-3">
+                      <div className="bg-slate-700 p-2 rounded-full mr-3">
                         <Calendar size={16} className="text-[#fd8f01]" />
                       </div>
                       <div>
-                        <p className="text-sm text-gray-500">Started</p>
-                        <p className="font-medium">{project.startDate}</p>
+                        <p className="text-sm text-gray-400">Started</p>
+                        <p className="font-medium text-white">{project.startDate}</p>
                       </div>
                     </div>
                     
                     <div className="flex items-center">
-                      <div className="bg-gray-100 p-2 rounded-full mr-3">
+                      <div className="bg-slate-700 p-2 rounded-full mr-3">
                         <Clock size={16} className="text-[#fd8f01]" />
                       </div>
                       <div>
-                        <p className="text-sm text-gray-500">Current Phase</p>
-                        <p className="font-medium">{project.currentPhase}</p>
+                        <p className="text-sm text-gray-400">Current Phase</p>
+                        <p className="font-medium text-white">{project.currentPhase}</p>
                       </div>
                     </div>
                   </div>

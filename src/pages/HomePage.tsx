@@ -5,7 +5,10 @@ import {
   Search, 
   Code, 
   Hammer,
-  Check
+  Check,
+  Star,
+  CheckCircle,
+  ExternalLink
 } from 'lucide-react';
 import ServiceCard from '../components/ServiceCard';
 import WhatsAppIcon from '../components/WhatsAppIcon';
@@ -470,6 +473,130 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Case Study Section - CustomWoodworx */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="bg-[#fff5e6] p-2 inline-block rounded-lg text-[#fd8f01] mb-4">
+              <Star size={24} />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Featured Case Study: CustomWoodworx</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how we transformed this carpentry business with a stunning website and custom links page
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Modern Website That Showcases Craftsmanship</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                CustomWoodworx needed a website that would highlight their exceptional carpentry and joinery work. We delivered a responsive, visually stunning site that:
+              </p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Showcases their portfolio with high-quality project galleries</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Highlights customer testimonials to build trust</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Makes it easy for potential clients to request quotes</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Optimized for mobile devices and fast loading times</span>
+                </li>
+              </ul>
+              
+              <a 
+                href="https://custom-woodworx.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center text-[#fd8f01] font-semibold hover:text-[#e68101] transition-colors"
+              >
+                <span>Visit the CustomWoodworx website</span>
+                <ExternalLink size={18} className="ml-2" />
+              </a>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740955287/Add_a_heading_rzu0uk.png" 
+                alt="CustomWoodworx website on laptop and mobile devices" 
+                className="rounded-lg w-full"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-3 rounded-lg shadow-lg hidden md:block">
+                <div className="text-sm font-bold text-slate-800">Built & Delivered in</div>
+                <div className="text-2xl font-bold text-[#fd8f01]">Just 3 Days</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
+              <img 
+                src="https://res.cloudinary.com/dbmj7rhwt/image/upload/v1740955287/Copy_of_Add_a_heading_lsvg8n.png" 
+                alt="CustomWoodworx links page" 
+                className="rounded-lg w-full"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-[#fd8f01] p-3 rounded-lg shadow-lg text-white hidden md:block">
+                <div className="text-sm font-bold">Bonus Feature</div>
+                <div className="text-2xl font-bold">Custom Links Page</div>
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Custom Links Page: One Link For Everything</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                We also created a custom "links" page that works like a personalized Linktree. This gives CustomWoodworx:
+              </p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">A single, easy-to-share link for social media profiles</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Direct access to their portfolio, services, and contact info</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Consistent branding that matches their main website</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={20} />
+                  <span className="text-gray-700">Analytics to track which links get the most engagement</span>
+                </li>
+              </ul>
+              
+              <a 
+                href="https://custom-woodworx.vercel.app/links" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center text-[#fd8f01] font-semibold hover:text-[#e68101] transition-colors"
+              >
+                <span>See their custom links page</span>
+                <ExternalLink size={18} className="ml-2" />
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold text-slate-800 mb-4">Ready for a website that sets your trade business apart?</h3>
+            <Link 
+              to="/contact" 
+              className="bg-[#fd8f01] hover:bg-[#e68101] text-white font-bold py-3 px-8 rounded-md transition duration-300 inline-block"
+            >
+              Get Your Own Custom Website
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section 
