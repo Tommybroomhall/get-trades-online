@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight, Clock, Wrench } from 'lucide-react';
+import { Check, Clock, Wrench } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const PricesPage = () => {
@@ -70,10 +70,20 @@ const PricesPage = () => {
                 <div>
                   <h3 className="text-2xl font-bold text-slate-800">The Apprentice</h3>
                   <p className="text-gray-600 mt-1">For trade businesses 0-2 years old or just wanting a basic web presence</p>
+                  <div className="mt-3 p-3 bg-red-50 border border-red-100 rounded-md">
+                    <p className="text-sm text-red-700 font-medium">Not recommended for:</p>
+                    <ul className="text-sm text-red-600 mt-1 space-y-1">
+                      <li>• Existing businesses over 2 years old</li>
+                      <li>• Businesses expecting immediate high-volume leads</li>
+                      <li>• Tradespeople wanting full market domination</li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-3xl font-bold text-slate-800">£499</p>
+                  <p className="text-3xl font-bold text-slate-800">£300</p>
                   <p className="text-sm text-gray-500">one-time payment</p>
+                  <p className="text-sm text-gray-500 mt-1">+ £30/month maintenance</p>
+                  <p className="text-xs text-gray-400 mt-1">Total: £660 in first year</p>
                 </div>
               </div>
               
@@ -94,7 +104,7 @@ const PricesPage = () => {
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
-                    <span className="text-gray-700">Dives Customers into your business</span>
+                    <span className="text-gray-700">Drives Customers into your business</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
@@ -122,7 +132,7 @@ const PricesPage = () => {
             </div>
             
             {/* Premium Package */}
-            <div className="bg-slate-800 p-8 rounded-lg shadow-md border border-slate-700 hover:shadow-lg transition-shadow">
+            <div className="bg-slate-800 p-8 rounded-lg shadow-md border border-slate-700 hover:shadow-lg transition-shadow relative">
               <div className="absolute -mt-12 ml-4 bg-[#fd8f01] text-white py-1 px-4 rounded-full font-medium">
                 Most Popular
               </div>
@@ -133,8 +143,10 @@ const PricesPage = () => {
                   <p className="text-gray-300 mt-2 text-sm">A website that evolves with your business - never truly finished, always improving</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-3xl font-bold text-white">£799</p>
+                  <p className="text-3xl font-bold text-white">£500</p>
                   <p className="text-sm text-gray-300">one-time payment</p>
+                  <p className="text-sm text-gray-300 mt-1">+ £30/month maintenance</p>
+                  <p className="text-xs text-gray-400 mt-1">Total: £860 in first year</p>
                 </div>
               </div>
               
@@ -187,50 +199,306 @@ const PricesPage = () => {
             </div>
           </div>
           
-          {/* Additional Costs Section */}
-          <div className="bg-gray-50 rounded-lg p-8 mb-16">
-            <h3 className="text-2xl font-bold text-slate-800 mb-6">Additional Costs</h3>
+          {/* Monthly Maintenance Section */}
+          <div className="bg-white rounded-lg shadow-md p-4 sm:p-8 mb-16 border border-gray-100">
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 sm:h-8 w-6 sm:w-8 text-[#fd8f01]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-800">Monthly Maintenance & Support</h3>
+            </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
               <div>
-                <h4 className="text-lg font-semibold text-slate-700 mb-3">Hosting & Maintenance</h4>
-                <p className="text-gray-600 mb-4">
-                  All websites require ongoing hosting and maintenance to stay secure and up-to-date.
-                </p>
-                <div className="bg-white p-4 rounded-md shadow-sm border border-gray-100">
-                  <p className="text-slate-800 font-medium">£350/year</p>
-                  <p className="text-sm text-gray-500 mt-1">Includes domain name renewal, regular security updates, and SEO updates and a review of the site every year, this also includes the hosting for the year.</p>
+                <div className="bg-slate-50 p-4 sm:p-6 rounded-lg">
+                  <p className="text-2xl sm:text-3xl font-bold text-[#fd8f01] mb-1 sm:mb-2">£30</p>
+                  <p className="text-base sm:text-lg text-slate-700 mb-3 sm:mb-4">per month</p>
+                  <div className="bg-white p-3 sm:p-4 rounded-md mb-3 sm:mb-4">
+                    <p className="text-sm text-gray-600">First Year Total:</p>
+                    <p className="text-base sm:text-lg font-bold text-slate-800">£360</p>
+                    <p className="text-xs text-gray-500">(£30 × 12 months)</p>
+                  </div>
+                  <ul className="space-y-2 sm:space-y-3">
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Small content updates and changes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Regular maintenance and updates</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Technical support when needed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">You own the code - always</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Easy WhatsApp communication for all changes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Weekly check-ins with performance stats</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
               
               <div>
-                <h4 className="text-lg font-semibold text-slate-700 mb-3">Advanced Features</h4>
-                <p className="text-gray-600 mb-4">
-                  Additional features can be added to your custom website based on your specific needs.
+                <div className="bg-slate-50 p-4 sm:p-6 rounded-lg">
+                  <h4 className="font-bold text-base sm:text-lg text-slate-800 mb-3 sm:mb-4">Why Choose Our Maintenance Plan?</h4>
+                  <div className="bg-white p-3 sm:p-4 rounded-md mb-3 sm:mb-4">
+                    <p className="text-sm text-gray-600">Package Totals (First Year):</p>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-sm">The Apprentice:</span>
+                        <span className="font-bold">£660</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm">Completely Flat Out:</span>
+                        <span className="font-bold">£860</span>
+                      </div>
+                    </div>
+                  </div>
+                  <ul className="space-y-2 sm:space-y-3">
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">No large hosting fees</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Regular updates keep your site fresh</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Peace of mind with ongoing support</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Your website stays competitive</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Weekly performance reports via WhatsApp</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
+                      <span className="text-gray-700">Quick response to all your requests</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Additional Costs Section */}
+          <div className="bg-gray-50 rounded-lg p-4 sm:p-8 mb-16">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2 sm:mb-3">Additional Services</h3>
+              <p className="text-gray-600 max-w-3xl mx-auto">Take your online presence to the next level with our premium add-ons</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+              <div>
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="bg-[#fd8f01]/10 p-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#fd8f01]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-bold text-slate-800">Business Growth Services</h4>
+                </div>
+                <p className="text-gray-600 mb-4 sm:mb-6">
+                  Enhance your online presence and streamline your business operations with our additional services.
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
-                    <div>
-                      <span className="text-slate-700 font-medium">Quote engine integration</span>
-                      <p className="text-sm text-gray-500">Price agreed upon consultation</p>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-blue-50 p-3 rounded-lg group-hover:bg-blue-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-slate-800 mb-2">Google My Business Management</h5>
+                        <p className="text-gray-600 mb-3">Professional management of your Google Business Profile, including review monitoring and optimization.</p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-lg font-bold text-[#fd8f01]">£50/month</p>
+                          <Link 
+                            to="/services/google-business-management"
+                            className="text-sm font-medium text-slate-700 hover:text-[#fd8f01] flex items-center gap-1 group"
+                          >
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
-                    <div>
-                      <span className="text-slate-700 font-medium">Custom software integrations</span>
-                      <p className="text-sm text-gray-500">Price agreed upon consultation</p>
+                  </div>
+                  
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-purple-50 p-3 rounded-lg group-hover:bg-purple-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-slate-800 mb-2">AI Call Handling</h5>
+                        <p className="text-gray-600 mb-3">Never miss a call with our AI-powered call handling system that manages inquiries 24/7.</p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-lg font-bold text-[#fd8f01]">£40/month</p>
+                          <Link 
+                            to="/services/ai-call-handling"
+                            className="text-sm font-medium text-slate-700 hover:text-[#fd8f01] flex items-center gap-1 group"
+                          >
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </li>
-                  <li className="flex items-start">
-                    <ArrowRight className="text-[#fd8f01] mt-1 mr-2 flex-shrink-0" size={16} />
-                    <div>
-                      <span className="text-slate-700 font-medium">E-commerce functionality</span>
-                      <p className="text-sm text-gray-500">Starting at £699</p>
+                  </div>
+                  
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-green-50 p-3 rounded-lg group-hover:bg-green-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-slate-800 mb-2">Social Media Management</h5>
+                        <p className="text-gray-600 mb-3">Professional management of your social media presence, content creation, and engagement.</p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-lg font-bold text-[#fd8f01]">£60/month</p>
+                          <Link 
+                            to="/services/social-media-management"
+                            className="text-sm font-medium text-slate-700 hover:text-[#fd8f01] flex items-center gap-1 group"
+                          >
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="bg-[#fd8f01]/10 p-2 rounded-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#fd8f01]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-bold text-slate-800">Custom Integrations</h4>
+                </div>
+                <div className="bg-[#fd8f01]/5 p-3 sm:p-4 rounded-lg border border-[#fd8f01]/10 mb-4 sm:mb-6">
+                  <div className="flex items-start gap-2">
+                    <div className="bg-[#fd8f01] rounded-full p-1 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-slate-800 font-medium">Save 10% on all integrations when added during initial website creation!</p>
+                      <p className="text-gray-600 text-sm mt-1">While these features can be added at any time, you'll get the best value by including them in your initial build.</p>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600 mb-4 sm:mb-6">
+                  Streamline your business operations with custom integrations and advanced features.
+                </p>
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-teal-50 p-3 rounded-lg group-hover:bg-teal-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-slate-800 mb-2">Custom WhatsApp Integration</h5>
+                        <p className="text-gray-600 mb-3">Seamless integration of WhatsApp into your website for instant customer communication.</p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-lg font-bold text-[#fd8f01]">£200 one-time</p>
+                          <Link 
+                            to="/services/whatsapp-integration"
+                            className="text-sm font-medium text-slate-700 hover:text-[#fd8f01] flex items-center gap-1 group"
+                          >
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-indigo-50 p-3 rounded-lg group-hover:bg-indigo-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-slate-800 mb-2">Direct Booking System</h5>
+                        <p className="text-gray-600 mb-3">Allow customers to book your services directly through your website.</p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-lg font-bold text-[#fd8f01]">£300 one-time</p>
+                          <Link 
+                            to="/services/direct-booking"
+                            className="text-sm font-medium text-slate-700 hover:text-[#fd8f01] flex items-center gap-1 group"
+                          >
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+                    <div className="flex items-start gap-4">
+                      <div className="bg-rose-50 p-3 rounded-lg group-hover:bg-rose-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-rose-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-slate-800 mb-2">Online Quote Generator</h5>
+                        <p className="text-gray-600 mb-3">Custom quote generation system tailored to your specific services and pricing.</p>
+                        <div className="flex items-center justify-between">
+                          <p className="text-lg font-bold text-[#fd8f01]">£250 one-time</p>
+                          <Link 
+                            to="/services/quote-generator"
+                            className="text-sm font-medium text-slate-700 hover:text-[#fd8f01] flex items-center gap-1 group"
+                          >
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

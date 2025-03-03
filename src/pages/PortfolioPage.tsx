@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Hammer, Calendar, CheckCircle, Clock, ArrowRight, Star, ExternalLink, Construction } from 'lucide-react';
+import { Hammer, Calendar, CheckCircle, Clock, ArrowRight, Star, ExternalLink, Construction, Factory, PenTool, CheckSquare, Code, Rocket, Circle } from 'lucide-react';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import Lottie from 'react-lottie-player';
 import constructionAnimation from '../assets/construction-animation.json';
@@ -30,6 +30,7 @@ interface InProgressProject extends BaseProject {
   progress: number; // 0-100
   estimatedCompletion: string;
   currentPhase: string;
+  phaseNumber: number; // 1-4 indicating which phase the project is in
 }
 
 interface UpcomingProject extends BaseProject {
@@ -98,6 +99,32 @@ const PortfolioPage = () => {
   // Data for in-progress projects
   const inProgressProjects: InProgressProject[] = [
     {
+      id: "sunset-landscaping",
+      title: "Sunset Landscaping & Gardens",
+      businessType: "Landscaping Services",
+      description: "Developing a website showcasing garden transformations, maintenance services, and seasonal offerings with an integrated booking system.",
+      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      logoImage: "https://placehold.co/100x100/orange/white?text=SL",
+      startDate: "27 February 2025",
+      progress: 90,
+      estimatedCompletion: "3 March 2025",
+      currentPhase: "Launch Preparation",
+      phaseNumber: 4
+    },
+    {
+      id: "elite-roofing",
+      title: "Elite Roofing Solutions",
+      businessType: "Roofing Contractor",
+      description: "Developing a complete roofing service website with before/after gallery, emergency repair information, and free quote functionality.",
+      image: "https://images.unsplash.com/photo-1588012886079-6c2a6f692e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      logoImage: "https://placehold.co/100x100/orange/white?text=ER",
+      startDate: "28 February 2025",
+      progress: 40,
+      estimatedCompletion: "3 March 2025",
+      currentPhase: "Design Approval",
+      phaseNumber: 2
+    },
+    {
       id: "smith-electrical",
       title: "Smith Electrical Services",
       businessType: "Electrical Contractor",
@@ -107,18 +134,21 @@ const PortfolioPage = () => {
       startDate: "1 March 2025",
       progress: 75,
       estimatedCompletion: "4 March 2025",
-      currentPhase: "Content Implementation"
+      currentPhase: "Content Implementation",
+      phaseNumber: 3
     },
     {
-      id: "elite-roofing",
-      title: "Elite Roofing Solutions",
-      businessType: "Roofing Contractor",
-      description: "Developing a complete roofing service website with before/after gallery, emergency repair information, and free quote functionality.",
-      image: "https://images.unsplash.com/photo-1588012886079-6c2a6f692e3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      startDate: "28 February 2025",
-      progress: 40,
-      estimatedCompletion: "3 March 2025",
-      currentPhase: "Design Approval"
+      id: "brighton-builders",
+      title: "Brighton Builders & Renovations",
+      businessType: "General Contractor",
+      description: "Creating a showcase website with project galleries, service breakdown, and client testimonials for this established building firm.",
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89f12d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      logoImage: "https://placehold.co/100x100/orange/white?text=BB",
+      startDate: "2 March 2025",
+      progress: 20,
+      estimatedCompletion: "5 March 2025",
+      currentPhase: "Initial Design",
+      phaseNumber: 1
     }
   ];
 
@@ -181,6 +211,81 @@ const PortfolioPage = () => {
       </div>
     );
   };
+
+  // Function to render progress tracker (Domino's pizza style)
+  const renderProgressTracker = (phaseNumber: number) => {
+    const phases = [
+      { name: "Initial Design", icon: "PenTool" },
+      { name: "Design Approval", icon: "CheckSquare" },
+      { name: "Content Implementation", icon: "Code" },
+      { name: "Launch Preparation", icon: "Rocket" }
+    ];
+    
+    return (
+      <div className="w-full my-4">
+        <div className="relative">
+          {/* Background track */}
+          <div className="h-2 bg-slate-700 rounded-full w-full absolute top-4"></div>
+          
+          {/* Phases container */}
+          <div className="flex justify-between relative">
+            {phases.map((phase, index) => {
+              const isComplete = index + 1 <= phaseNumber;
+              const isCurrent = index + 1 === phaseNumber;
+              
+              // Icon based on phase
+              let PhaseIcon;
+              switch(phase.icon) {
+                case "PenTool": 
+                  PhaseIcon = <PenTool size={16} />;
+                  break;
+                case "CheckSquare":
+                  PhaseIcon = <CheckSquare size={16} />;
+                  break;
+                case "Code":
+                  PhaseIcon = <Code size={16} />;
+                  break;
+                case "Rocket":
+                  PhaseIcon = <Rocket size={16} />;
+                  break;
+                default:
+                  PhaseIcon = <Circle size={16} />;
+              }
+              
+              return (
+                <div key={index} className="flex flex-col items-center relative z-10">
+                  {/* Phase circle */}
+                  <div 
+                    className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      isComplete 
+                        ? 'bg-[#fd8f01] text-white' 
+                        : isCurrent 
+                          ? 'bg-white border-2 border-[#fd8f01] text-[#fd8f01]' 
+                          : 'bg-slate-700 text-slate-500'
+                    } ${isCurrent ? 'ring-4 ring-[#fd8f01]/20' : ''}`}
+                  >
+                    {PhaseIcon}
+                  </div>
+                  
+                  {/* Phase name */}
+                  <p className={`text-xs font-medium mt-2 text-center ${
+                    isComplete || isCurrent ? 'text-white' : 'text-slate-500'
+                  }`}>
+                    {phase.name}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Sort inProgressProjects by progress percentage (highest first)
+  const sortedInProgressProjects = [...inProgressProjects].sort((a, b) => {
+    return b.progress - a.progress;
+  });
 
   return (
     <div className="min-h-screen">
@@ -390,7 +495,7 @@ const PortfolioPage = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="md:w-1/3 flex justify-center mb-8 md:mb-0">
+            <div className="hidden md:flex md:w-1/3 justify-center mb-8 md:mb-0">
               <Lottie
                 loop
                 animationData={constructionAnimation}
@@ -398,63 +503,83 @@ const PortfolioPage = () => {
                 style={{ width: 250, height: 250 }}
               />
             </div>
-            <div className="md:w-2/3">
+            <div className="w-full md:w-2/3">
               <p className="text-white text-lg mb-4">
-                Our team is currently working on these projects in real-time. From initial design to final launch, we build custom websites in just <span className="font-bold text-[#fd8f01]">3 days</span>. 
-                Watch our progress as we transform ideas into standout websites.
+                Our team is currently working on these projects in real-time. From initial design to final launch, we build custom websites in just <span className="font-bold text-[#fd8f01]">3 days</span>.
               </p>
+              
+              {/* Our 4-phase process explanation */}
+              <div className="bg-slate-800 p-4 rounded-lg border border-slate-700 mb-4">
+                <h3 className="text-white font-medium mb-2 flex items-center">
+                  <Factory className="h-5 w-5 mr-2 text-[#fd8f01]" />
+                  Our Website Factory
+                </h3>
+                <p className="text-gray-300 text-sm">
+                  Every website goes through our 4-phase production line. Track exactly where your project is in our development process.
+                </p>
+              </div>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {inProgressProjects.map(project => (
-              <div key={project.id} className="bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-slate-700">
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="font-bold text-xl text-white mb-1">{project.title}</h3>
-                      <p className="text-[#fd8f01] text-sm font-medium mb-1">{project.businessType}</p>
-                    </div>
-                    <div className="bg-[#fd8f01] text-white text-sm px-3 py-1 rounded-full font-medium flex items-center shadow-md">
-                      <Construction size={12} className="mr-1" />
-                      <span>In Progress</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  
-                  <div className="mb-5">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium text-gray-300">Progress: {project.progress}%</span>
-                      <span className="text-sm font-medium text-gray-300">Est. Completion: {project.estimatedCompletion}</span>
-                    </div>
-                    {renderProgressBar(project.progress)}
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
-                    <div className="flex items-center">
-                      <div className="bg-slate-700 p-2 rounded-full mr-3">
-                        <Calendar size={16} className="text-[#fd8f01]" />
+          {/* Horizontal scroll indicator for mobile */}
+          <div className="md:hidden flex items-center justify-center mb-4 text-gray-300">
+            <ArrowRight className="h-4 w-4 mr-2 animate-pulse" />
+            <span className="text-sm">Swipe to see more projects</span>
+            <ArrowRight className="h-4 w-4 ml-2 animate-pulse" />
+          </div>
+
+          {/* Horizontal scrollable container for mobile, grid for larger screens */}
+          <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex overflow-x-auto pb-4 sm:pb-0 sm:grid sm:grid-cols-1 md:grid-cols-2 sm:gap-8 snap-x">
+              {sortedInProgressProjects.map((project) => (
+                <div 
+                  key={project.id} 
+                  className="flex-shrink-0 w-[90vw] max-w-[360px] sm:w-full sm:max-w-none mr-4 sm:mr-0 snap-start"
+                >
+                  <div className="bg-slate-800 rounded-lg shadow-lg overflow-hidden border border-slate-700 h-full">
+                    <div className="p-6">
+                      <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center">
+                          {project.logoImage && (
+                            <div className="bg-white p-1 rounded-full overflow-hidden shadow-md h-10 w-10 flex items-center justify-center mr-3">
+                              <img 
+                                src={project.logoImage} 
+                                alt={`${project.title} logo`}
+                                className="w-8 h-8 object-contain"
+                              />
+                            </div>
+                          )}
+                          <div>
+                            <h3 className="font-bold text-xl text-white">{project.title}</h3>
+                            <p className="text-[#fd8f01] text-sm font-medium">{project.businessType}</p>
+                          </div>
+                        </div>
+                        <div className="bg-[#fd8f01] text-white text-xs px-3 py-1 rounded-full font-medium flex items-center shadow-md">
+                          <Construction size={12} className="mr-1" />
+                          <span>Phase {project.phaseNumber}</span>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-sm text-gray-400">Started</p>
-                        <p className="font-medium text-white">{project.startDate}</p>
+                      
+                      {/* Domino's style tracker */}
+                      {renderProgressTracker(project.phaseNumber)}
+                      
+                      <div className="mt-4 mb-2">
+                        <div className="flex justify-between mb-1">
+                          <span className="text-sm font-medium text-gray-300">{project.progress}% Complete</span>
+                          <span className="text-sm font-medium text-gray-300">{project.currentPhase}</span>
+                        </div>
+                        {renderProgressBar(project.progress)}
                       </div>
-                    </div>
-                    
-                    <div className="flex items-center">
-                      <div className="bg-slate-700 p-2 rounded-full mr-3">
-                        <Clock size={16} className="text-[#fd8f01]" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-400">Current Phase</p>
-                        <p className="font-medium text-white">{project.currentPhase}</p>
+                      
+                      <div className="flex justify-between text-xs text-gray-400 mt-3">
+                        <span>Started: {project.startDate}</span>
+                        <span>Est. Completion: {project.estimatedCompletion}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

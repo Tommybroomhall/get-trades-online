@@ -12,6 +12,8 @@ import WebsiteQuestionnairePage from './pages/WebsiteQuestionnairePage';
 import ThankYouPage from './pages/ThankYouPage';
 import ScrollToTop from './components/ScrollToTop';
 import PricesPage from './pages/PricesPage';
+import BlogPage from './pages/blog/BlogPage';
+import BlogPostPage from './pages/blog/BlogPostPage';
 
 const App = () => {
   const location = useLocation();
@@ -32,6 +34,8 @@ const App = () => {
           <Route path="/get-started" element={<WebsiteQuestionnairePage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/prices" element={<PricesPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
       </main>
       {!isQuestionnairePage && <Footer />}

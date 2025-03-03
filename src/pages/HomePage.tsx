@@ -436,42 +436,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4" style={{ fontSize: 'calc(2rem + 1px)' }}>Core Services</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ fontSize: 'calc(1.25rem + 1px)' }}>
-              Our essential web solutions for tradespeople. Additional services can be added to your package based on your specific needs.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <ServiceCard 
-              icon={<Palette size={32} />}
-              title="Custom Website Design"
-              description="Professional designs built specifically for tradespeople that showcase your work and services. Mobile-friendly and designed to convert visitors into customers."
-              link="/services#web-design"
-            />
-            
-            <ServiceCard 
-              icon={<Search size={32} />}
-              title="Local SEO"
-              description="Get found by local customers searching for your trade. We optimize your site to appear in local searches and Google Maps, bringing you qualified leads in your service area."
-              link="/services#seo"
-            />
-            
-            <ServiceCard 
-              icon={<Code size={32} />}
-              title="Ongoing Support"
-              description="Hassle-free updates and changes whenever you need them. We handle all the technical maintenance so you can focus on running your business."
-              link="/services#support"
-            />
-          </div>
-          
-         
-        </div>
-      </section>
 
       {/* Case Study Section - CustomWoodworx */}
       <section className="py-20 bg-gray-50">

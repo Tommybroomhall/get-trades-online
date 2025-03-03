@@ -68,6 +68,7 @@ const Navbar = () => {
               </Link>
               <Link to="/services" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Services</Link>
               <Link to="/portfolio" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Our Work</Link>
+              <Link to="/blog" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
               <Link to="/contact" className="hover:text-[#fd8f01] px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
             </div>
           </div>
@@ -138,6 +139,13 @@ const Navbar = () => {
               onClick={closeMenu}
             >
               Our Work
+            </Link>
+            <Link 
+              to="/blog" 
+              className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
+              onClick={closeMenu}
+            >
+              Blog
             </Link>
             <Link 
               to="/contact" 

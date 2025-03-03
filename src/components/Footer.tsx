@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MessageSquare, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Linkedin, Mail, MessageSquare, MapPin } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 
 const Footer = () => {
@@ -54,8 +54,8 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={18} />
-                <span>01234 567890</span>
+                <MessageSquare className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={18} />
+                <span>WhatsApp: +44 7424 163547</span>
               </li>
               <li className="flex items-start">
                 <Mail className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={18} />
@@ -63,11 +63,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <MapPin className="text-[#fd8f01] mt-1 mr-3 flex-shrink-0" size={18} />
-                <span>
-                  123 Builder Street<br />
-                  Tradesville, UK<br />
-                  AB12 3CD
-                </span>
+                <span>Based in Bristol, serving tradespeople across the UK</span>
               </li>
             </ul>
           </div>
