@@ -124,14 +124,14 @@ const ServicesPage = () => {
               <div className="inline-block p-3 bg-[#fff5e6] rounded-full text-[#fd8f01] mb-4">
                 <Clock size={32} />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">48-Hour Delivery</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-2">Done in days not weeks</h3>
               <p className="text-gray-600 mb-4">
-                Your website up and running in just 48 hours. No lengthy design processes or endless meetings. Just quick results.
+                Your website up and running in just a few days and your kept in the loop every step of the way. No lengthy design processes or endless meetings. Just quick results.
               </p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
                   <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={16} />
-                  <span className="text-gray-700">From order to live site in 2 days (not weeks)</span>
+                  <span className="text-gray-700">From order to live site in around 3 days (not weeks)</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={16} />

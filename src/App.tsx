@@ -14,6 +14,9 @@ import ScrollToTop from './components/ScrollToTop';
 import PricesPage from './pages/PricesPage';
 import BlogPage from './pages/blog/BlogPage';
 import BlogPostPage from './pages/blog/BlogPostPage';
+import ReferralProgramPage from './pages/ReferralProgramPage';
+import FreeWebsitesPage from './pages/FreeWebsitesPage';
+import WebsiteTradeClaim from './pages/WebsiteTradeClaim';
 
 const App = () => {
   const location = useLocation();
@@ -36,6 +39,9 @@ const App = () => {
           <Route path="/prices" element={<PricesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/referral-program" element={<ReferralProgramPage />} />
+          <Route path="/free-websites" element={<FreeWebsitesPage />} />
+          <Route path="/claim-website" element={<WebsiteTradeClaim />} />
         </Routes>
       </main>
       {!isQuestionnairePage && <Footer />}

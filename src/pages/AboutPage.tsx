@@ -128,7 +128,7 @@ const AboutPage = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>48-hour turnaround from payment to live website</span>
+                  <span>Super Fast turnaround from payment to live website</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
