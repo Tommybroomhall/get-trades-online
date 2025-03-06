@@ -12,6 +12,12 @@ interface FormData {
   website: string;
   yearsInBusiness: string;
   services: string[];
+  specificServices: string;
+  uniqueSellingPoints: string;
+  flagshipServices: string;
+  pricingModel: string;
+  certifications: string;
+  serviceProcess: string;
   areas: string;
   existingReviews: string[];
   photosAvailable: string;
@@ -26,6 +32,14 @@ interface FormData {
   profitableWork: string;
   domainAvailable: string;
   domainName: string;
+  websiteStyle: string[];
+  competitorWebsites: string;
+  callToAction: string;
+  contentTone: string;
+  specialFeatures: string[];
+  testimonialSources: string[];
+  socialMedia: string[];
+  additionalPages: string;
 }
 
 // Define API key from environment variable
@@ -50,6 +64,12 @@ const WebsiteQuestionnairePage = () => {
     website: '',
     yearsInBusiness: '',
     services: [],
+    specificServices: '',
+    uniqueSellingPoints: '',
+    flagshipServices: '',
+    pricingModel: '',
+    certifications: '',
+    serviceProcess: '',
     areas: '',
     existingReviews: [],
     photosAvailable: 'no',
@@ -63,7 +83,15 @@ const WebsiteQuestionnairePage = () => {
     advertisingStruggles: '',
     profitableWork: '',
     domainAvailable: 'no',
-    domainName: ''
+    domainName: '',
+    websiteStyle: [],
+    competitorWebsites: '',
+    callToAction: 'phone',
+    contentTone: 'conversational',
+    specialFeatures: [],
+    testimonialSources: [],
+    socialMedia: [],
+    additionalPages: '',
   });
   
   const totalSteps = 4;
@@ -146,6 +174,9 @@ const WebsiteQuestionnairePage = () => {
   // Format the form data into a readable message
   const formatFormDataForSuperchat = (data: FormData): string => {
     return `
+🤖 *AI ASSISTANT PROMPT* 🤖
+Please review this website questionnaire submission and identify any missing or incomplete information. Ask follow-up questions for any sections that need more detail, especially regarding services, target audience, and design preferences. Help the customer refine their website requirements.
+
 🏗️ *NEW WEBSITE QUESTIONNAIRE SUBMISSION* 🏗️
 
 *Business Details:*
@@ -157,20 +188,45 @@ const WebsiteQuestionnairePage = () => {
 - Website: ${data.website || 'None'}
 
 *Services:*
-${data.services.length > 0 ? data.services.map(service => `- ${service}`).join('\n') : '- None selected'}
+${data.specificServices || 'Not specified'}
+
+*Unique Selling Points:*
+${data.uniqueSellingPoints || 'Not specified'}
+
+*Flagship Services:*
+${data.flagshipServices || 'Not specified'}
+
+*Pricing Model:*
+${data.pricingModel || 'Not specified'}
+
+*Certifications/Qualifications:*
+${data.certifications || 'Not specified'}
+
+*Service Process:*
+${data.serviceProcess || 'Not specified'}
 
 *Service Areas:*
 ${data.areas || 'Not specified'}
 
+*Website Design Preferences:*
+- Style: ${data.websiteStyle.length > 0 ? data.websiteStyle.join(', ') : 'None specified'}
+- Similar Websites: ${data.competitorWebsites || 'None provided'}
+- Main Call-to-Action: ${data.callToAction || 'Phone calls'}
+- Content Tone: ${data.contentTone || 'Conversational'}
+- Desired Features: ${data.specialFeatures.length > 0 ? data.specialFeatures.join(', ') : 'Standard features only'}
+- Additional Pages: ${data.additionalPages || 'Standard pages only'}
+- Social Media: ${data.socialMedia.length > 0 ? data.socialMedia.join(', ') : 'None provided'}
+- Testimonial Sources: ${data.testimonialSources.length > 0 ? data.testimonialSources.join(', ') : 'None provided'}
+
 *Review Platforms:*
-${data.existingReviews.length > 0 ? data.existingReviews.map(platform => `- ${platform}`).join('\n') : '- None'}
+${data.testimonialSources.length > 0 ? data.testimonialSources.filter(source => !source.includes('No Testimonials')).map(source => `- ${source}`).join('\n') : '- None'}
 
 *Assets:*
-- Photos Available: ${data.photosAvailable === 'yes' ? '✅' : '❌'}
+- Photos Available: ${data.photosAvailable === 'yes' ? '✅' : '❌'}${data.photosAvailable === 'yes' ? '\n  ➡️ *Please send your photos via WhatsApp after sending this message*' : ''}
 - Logo Available: ${data.logoAvailable === 'yes' ? '✅' : '❌'}
 - Domain Available: ${data.domainAvailable === 'yes' ? '✅' : '❌'}
 - Domain Name: ${data.domainAvailable === 'yes' ? data.domainName : 'Needs to purchase one'}
-- Color Preferences: ${data.preferredColors.length > 0 ? data.preferredColors.join(', ') : 'None specified'}
+- Color Schemes: ${data.preferredColors.length > 0 ? data.preferredColors.join('\n  • ') : 'None specified'}
 
 *Business Growth:*
 - Current Challenges: ${data.businessChallenges || 'Not provided'}
@@ -246,14 +302,73 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
     'Other'
   ];
   
-  const reviewPlatformOptions = [
-    'Google Reviews', 'Facebook', 'CheckATrade', 'MyBuilder',
-    'TrustATrader', 'Yell', 'None yet'
+  const colorSchemeOptions = [
+    'Modern Blue (Blue + White + Light Grey)',
+    'Clean Green (Green + White + Light Grey)',
+    'Bold Red (Red + Black + White)',
+    'Eye-catching Orange (Orange + Dark Blue + White)',
+    'Professional Navy (Navy Blue + Grey + White)',
+    'Minimalist Black & White (Black + White + Grey)',
+    'Industrial Grey (Dark Grey + Orange + White)',
+    'Luxury Gold (Black + Gold + White)',
+    'Friendly Teal (Teal + Orange + White)',
+    'Approachable Purple (Purple + Light Grey + White)',
+    'Earth Tones (Brown + Green + Cream)',
+    'Not sure - you decide'
   ];
   
-  const colorOptions = [
-    'Blue', 'Green', 'Red', 'Orange', 'Black', 
-    'Grey', 'Yellow', 'Brown', 'Not sure - you decide'
+  const websiteStyleOptions = [
+    'Modern & Clean', 
+    'Bold & Eye-catching', 
+    'Traditional & Professional',
+    'Minimalist',
+    'Industrial/Rugged',
+    'Luxury/High-end',
+    'Friendly & Approachable',
+    'Not sure - you decide'
+  ];
+  
+  // Update the special feature options to indicate premium features
+  const specialFeatureOptions = [
+    'Quote request form',
+    'Image gallery/portfolio',
+    'Customer reviews section',
+    'Service area map',
+    'Emergency contact button',
+    'FAQ section',
+    'Financing options',
+    'Before/after project slider',
+    'Project calculator (Premium)',
+    'Online booking system (Premium - requires discussion)'
+  ];
+  
+  // Update testimonial source options to be more comprehensive by combining both lists
+  const testimonialSourceOptions = [
+    'Google Reviews', 
+    'Facebook Reviews', 
+    'CheckATrade Reviews',
+    'TrustATrader Reviews',
+    'MyBuilder Reviews',
+    'Yell Reviews',
+    'Social Media Comments',
+    'Email Testimonials',
+    'Text Messages',
+    'Written Testimonials',
+    'No Testimonials Yet'
+  ];
+  
+  // Add social media platform options
+  const socialMediaOptions = [
+    'Facebook',
+    'Instagram',
+    'LinkedIn',
+    'Twitter/X',
+    'TikTok',
+    'YouTube',
+    'Pinterest',
+    'Snapchat',
+    'Nextdoor',
+    'None/Not interested'
   ];
   
   return (
@@ -327,6 +442,23 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
                 
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
+                    What trade are you in?
+                  </label>
+                  <select
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    value={formData.tradeName}
+                    onChange={(e) => updateFormData('tradeName', e.target.value)}
+                    required
+                  >
+                    <option value="">Select your main trade</option>
+                    {serviceOptions.map((service) => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
                     How many years have you been in business?
                   </label>
                   <select
@@ -346,19 +478,15 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
                 
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
-                    What trade are you in?
+                    Do you have an existing website? (It's fine if you don't)
                   </label>
-                  <select
+                  <input
+                    type="text"
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
-                    value={formData.tradeName}
-                    onChange={(e) => updateFormData('tradeName', e.target.value)}
-                    required
-                  >
-                    <option value="">Select your main trade</option>
-                    {serviceOptions.map((service) => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
+                    placeholder="e.g. www.smithplumbing.co.uk (or leave blank)"
+                    value={formData.website}
+                    onChange={(e) => updateFormData('website', e.target.value)}
+                  />
                 </div>
                 
                 <div>
@@ -401,6 +529,89 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
               <div className="space-y-6">
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
+                    What specific services do you offer?
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="Please list all services your business provides. Be specific (e.g., 'bathroom renovation', 'emergency plumbing repairs')"
+                    rows={4}
+                    value={formData.specificServices}
+                    onChange={(e) => updateFormData('specificServices', e.target.value)}
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    What makes your services unique compared to competitors?
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="e.g., 'Same-day service', 'Fixed price guarantee', '10-year warranty'"
+                    rows={3}
+                    value={formData.uniqueSellingPoints}
+                    onChange={(e) => updateFormData('uniqueSellingPoints', e.target.value)}
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Do you have any flagship or signature services you'd like to emphasize?
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="e.g., 'Our bathroom renovation package' or 'Our emergency 24/7 callout service'"
+                    rows={3}
+                    value={formData.flagshipServices}
+                    onChange={(e) => updateFormData('flagshipServices', e.target.value)}
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    How do you typically price your services?
+                  </label>
+                  <select
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    value={formData.pricingModel}
+                    onChange={(e) => updateFormData('pricingModel', e.target.value)}
+                  >
+                    <option value="">Select pricing model</option>
+                    <option value="Flat rate">Flat rate per job</option>
+                    <option value="Hourly">Hourly rate</option>
+                    <option value="Project-based">Project-based quotes</option>
+                    <option value="Custom quotes">Custom quotes only</option>
+                    <option value="Mixed pricing">Mixed pricing methods</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Do you have any certifications or qualifications related to your services?
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="e.g., 'Gas Safe registered', 'City & Guilds qualified', 'NICEIC approved'"
+                    rows={3}
+                    value={formData.certifications}
+                    onChange={(e) => updateFormData('certifications', e.target.value)}
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    What is your typical process for delivering services?
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="e.g., 'Initial consultation, written quote, scheduling, completion, follow-up'"
+                    rows={3}
+                    value={formData.serviceProcess}
+                    onChange={(e) => updateFormData('serviceProcess', e.target.value)}
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
                     What areas do you serve? (towns, counties or postcodes)
                   </label>
                   <textarea
@@ -410,19 +621,6 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
                     value={formData.areas}
                     onChange={(e) => updateFormData('areas', e.target.value)}
                   ></textarea>
-                </div>
-                
-                <div>
-                  <label className="block text-gray-700 font-medium mb-2">
-                    Do you have an existing website? (It's fine if you don't)
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
-                    placeholder="e.g. www.smithplumbing.co.uk (or leave blank)"
-                    value={formData.website}
-                    onChange={(e) => updateFormData('website', e.target.value)}
-                  />
                 </div>
               </div>
             </div>
@@ -437,24 +635,154 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
               <div className="space-y-6">
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
-                    Do you have reviews on any of these platforms? (tick all that apply)
+                    What style of website are you looking for? (select all that apply)
                   </label>
                   <div className="grid grid-cols-2 gap-2">
-                    {reviewPlatformOptions.map((platform) => (
+                    {websiteStyleOptions.map((style) => (
+                      <div key={style} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id={`style-${style}`}
+                          className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300 rounded"
+                          checked={formData.websiteStyle.includes(style)}
+                          onChange={() => handleCheckboxChange('websiteStyle', style)}
+                        />
+                        <label htmlFor={`style-${style}`} className="ml-2 text-gray-700">
+                          {style}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Are there any competitor or example websites you like? (optional)
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="e.g., www.example.com - I like their clean layout and easy navigation"
+                    rows={3}
+                    value={formData.competitorWebsites}
+                    onChange={(e) => updateFormData('competitorWebsites', e.target.value)}
+                  ></textarea>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    What special features would you like on your website? (select all that apply)
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {specialFeatureOptions.map((feature) => (
+                      <div key={feature} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id={`feature-${feature}`}
+                          className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300 rounded"
+                          checked={formData.specialFeatures.includes(feature)}
+                          onChange={() => handleCheckboxChange('specialFeatures', feature)}
+                        />
+                        <label htmlFor={`feature-${feature}`} className="ml-2 text-gray-700">
+                          {feature}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-2 text-sm text-gray-500">
+                    Note: Features marked as "Premium" may incur additional costs. The online booking system requires further discussion to determine your specific needs.
+                  </p>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    What's the main action you want visitors to take on your website?
+                  </label>
+                  <select
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    value={formData.callToAction}
+                    onChange={(e) => updateFormData('callToAction', e.target.value)}
+                  >
+                    <option value="phone">Call your business</option>
+                    <option value="contact-form">Fill out a contact form</option>
+                    <option value="quote">Request a quote</option>
+                    <option value="whatsapp">Message on WhatsApp</option>
+                    <option value="booking">Book an appointment</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Where can we find reviews/testimonials for your business? (tick all that apply)
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {testimonialSourceOptions.map((source) => (
+                      <div key={source} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id={`testimonial-${source}`}
+                          className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300 rounded"
+                          checked={formData.testimonialSources.includes(source)}
+                          onChange={() => handleCheckboxChange('testimonialSources', source)}
+                        />
+                        <label htmlFor={`testimonial-${source}`} className="ml-2 text-gray-700">
+                          {source}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    What tone would you prefer for your website content?
+                  </label>
+                  <select
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    value={formData.contentTone}
+                    onChange={(e) => updateFormData('contentTone', e.target.value)}
+                  >
+                    <option value="conversational">Friendly & Conversational</option>
+                    <option value="professional">Professional & Formal</option>
+                    <option value="technical">Technical & Detailed</option>
+                    <option value="direct">Direct & No-nonsense</option>
+                    <option value="reassuring">Reassuring & Helpful</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Which social media platforms would you like linked on your website? (tick all that apply)
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {socialMediaOptions.map((platform) => (
                       <div key={platform} className="flex items-center">
                         <input
                           type="checkbox"
-                          id={`review-${platform}`}
+                          id={`social-${platform}`}
                           className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300 rounded"
-                          checked={formData.existingReviews.includes(platform)}
-                          onChange={() => handleCheckboxChange('existingReviews', platform)}
+                          checked={formData.socialMedia.includes(platform)}
+                          onChange={() => handleCheckboxChange('socialMedia', platform)}
                         />
-                        <label htmlFor={`review-${platform}`} className="ml-2 text-gray-700">
+                        <label htmlFor={`social-${platform}`} className="ml-2 text-gray-700">
                           {platform}
                         </label>
                       </div>
                     ))}
                   </div>
+                </div>
+                
+                <div>
+                  <label className="block text-gray-700 font-medium mb-2">
+                    Any specific additional pages you'd like beyond the basics? (optional)
+                  </label>
+                  <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#fd8f01] focus:border-[#fd8f01]"
+                    placeholder="e.g., Project Gallery, Financing Options, Careers, Blog"
+                    rows={3}
+                    value={formData.additionalPages}
+                    onChange={(e) => updateFormData('additionalPages', e.target.value)}
+                  ></textarea>
+                  <p className="mt-1 text-sm text-gray-500">Standard pages include Home, About, Services, and Contact</p>
                 </div>
                 
                 <div>
@@ -588,20 +916,20 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
                 
                 <div>
                   <label className="block text-gray-700 font-medium mb-2">
-                    Any color preferences for your website? (tick all that apply)
+                    Which color scheme would you prefer for your website? (tick all that apply)
                   </label>
                   <div className="grid grid-cols-2 gap-2">
-                    {colorOptions.map((color) => (
-                      <div key={color} className="flex items-center">
+                    {colorSchemeOptions.map((scheme) => (
+                      <div key={scheme} className="flex items-center">
                         <input
                           type="checkbox"
-                          id={`color-${color}`}
+                          id={`color-${scheme}`}
                           className="h-4 w-4 text-[#fd8f01] focus:ring-[#fd8f01] border-gray-300 rounded"
-                          checked={formData.preferredColors.includes(color)}
-                          onChange={() => handleCheckboxChange('preferredColors', color)}
+                          checked={formData.preferredColors.includes(scheme)}
+                          onChange={() => handleCheckboxChange('preferredColors', scheme)}
                         />
-                        <label htmlFor={`color-${color}`} className="ml-2 text-gray-700">
-                          {color}
+                        <label htmlFor={`color-${scheme}`} className="ml-2 text-gray-700">
+                          {scheme}
                         </label>
                       </div>
                     ))}

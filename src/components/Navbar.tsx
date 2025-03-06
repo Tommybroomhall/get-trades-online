@@ -120,13 +120,6 @@ const Navbar = () => {
                     >
                       Refer a Mate
                     </Link>
-                    <Link
-                      to="/free-websites"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#fd8f01]"
-                      onClick={() => setIsMoreDropdownOpen(false)}
-                    >
-                      Free Websites
-                    </Link>
                   </div>
                 )}
               </div>
@@ -228,13 +221,6 @@ const Navbar = () => {
                     onClick={closeMenu}
                   >
                     Refer a Mate
-                  </Link>
-                  <Link 
-                    to="/free-websites" 
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#fd8f01]"
-                    onClick={closeMenu}
-                  >
-                    Free Websites
                   </Link>
                 </div>
               )}
