@@ -316,6 +316,22 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
     'Earth Tones (Brown + Green + Cream)',
     'Not sure - you decide'
   ];
+
+  // Color mapping for visual representation
+  const colorSchemeMapping: Record<string, string[]> = {
+    'Modern Blue (Blue + White + Light Grey)': ['#1E90FF', '#FFFFFF', '#D3D3D3'],
+    'Clean Green (Green + White + Light Grey)': ['#2E8B57', '#FFFFFF', '#D3D3D3'],
+    'Bold Red (Red + Black + White)': ['#FF0000', '#000000', '#FFFFFF'],
+    'Eye-catching Orange (Orange + Dark Blue + White)': ['#FFA500', '#00008B', '#FFFFFF'],
+    'Professional Navy (Navy Blue + Grey + White)': ['#000080', '#808080', '#FFFFFF'],
+    'Minimalist Black & White (Black + White + Grey)': ['#000000', '#FFFFFF', '#808080'],
+    'Industrial Grey (Dark Grey + Orange + White)': ['#696969', '#FFA500', '#FFFFFF'],
+    'Luxury Gold (Black + Gold + White)': ['#000000', '#FFD700', '#FFFFFF'],
+    'Friendly Teal (Teal + Orange + White)': ['#008080', '#FFA500', '#FFFFFF'],
+    'Approachable Purple (Purple + Light Grey + White)': ['#800080', '#D3D3D3', '#FFFFFF'],
+    'Earth Tones (Brown + Green + Cream)': ['#8B4513', '#2E8B57', '#FFFDD0'],
+    'Not sure - you decide': ['#CCCCCC', '#888888', '#444444']
+  };
   
   const websiteStyleOptions = [
     'Modern & Clean', 
@@ -928,7 +944,27 @@ PLEASE CLICK THE SEND BUTTON TO KEEP GOING ➡️➡️➡️
                           checked={formData.preferredColors.includes(scheme)}
                           onChange={() => handleCheckboxChange('preferredColors', scheme)}
                         />
-                        <label htmlFor={`color-${scheme}`} className="ml-2 text-gray-700">
+                        <label htmlFor={`color-${scheme}`} className="ml-2 text-gray-700 flex items-center">
+                          <div className="flex mr-2">
+                            {scheme === 'Not sure - you decide' ? (
+                              <div 
+                                className="w-5 h-5 rounded-full border border-gray-300 mr-1 flex items-center justify-center" 
+                                style={{ background: 'linear-gradient(135deg, #CCCCCC 0%, #888888 50%, #444444 100%)' }}
+                                title="Not sure"
+                              >
+                                <span className="text-xs">?</span>
+                              </div>
+                            ) : (
+                              colorSchemeMapping[scheme]?.map((color, index) => (
+                                <div 
+                                  key={index} 
+                                  className="w-5 h-5 rounded-full border border-gray-300 mr-1" 
+                                  style={{ backgroundColor: color }}
+                                  title={color}
+                                />
+                              )) || <div className="text-xs italic text-gray-500">No preview</div>
+                            )}
+                          </div>
                           {scheme}
                         </label>
                       </div>
